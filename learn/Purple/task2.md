@@ -23,7 +23,7 @@ https://build.avax.network/console/primary-network/faucet
 
 截图：Avalanche-101-Bootcamp/learn/Purple/task2Purple.png
 
-Contract Address：0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35
+Contract Address：0x1AB572CbE6e5746A7b4B42EA7C0409771D421712
 
 ## 截止时间
 
