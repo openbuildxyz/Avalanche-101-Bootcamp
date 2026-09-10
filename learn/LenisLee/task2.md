@@ -50,6 +50,14 @@
 
 ![Scaffold-ETH DApp 读取 Fuji 上的 LenisToken](./task2-LenisLee-dapp.png)
 
+## 截图：Snowtrace 区块浏览器
+
+`SNOWTRACE [Testnet]` 徽章确认为 Fuji 测试网；页面识别出该地址为 `Contract`，
+Token Trackers 显示 `LenisLee Bootcamp Token (LNS)`，Contract Creator 为部署账号
+`0x7BdF...9027C`，共 1 笔交易且类型为 `Contract Creation`（区块 58300954）：
+
+![Snowtrace 上的 LenisToken 合约页](./task2-LenisLee-snowtrace.png)
+
 ## 核心代码
 
 ### 合约（`packages/hardhat/contracts/LenisToken.sol`）
