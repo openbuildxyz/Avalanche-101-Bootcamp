@@ -6,6 +6,8 @@
 
 - 部署成功后截图
   <img width="843" height="738" alt="image" src="https://github.com/user-attachments/assets/49dcd549-64ad-4a39-8d9f-7e5c1653b308" />
+  <img width="824" height="808" alt="image" src="https://github.com/user-attachments/assets/05d874ff-cb7c-42f6-88aa-5fc4f3b65b1c" />
+
 
 - 链上合约的地址
   0xb18dff3eae3c290a062c46fb12ce3b365ac6efff
