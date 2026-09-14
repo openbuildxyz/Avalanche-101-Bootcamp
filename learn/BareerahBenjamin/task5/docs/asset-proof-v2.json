@@ -1,0 +1,19 @@
+{
+  "schema": "task5-simulated-warehouse-receipt-v1",
+  "simulationOnly": true,
+  "batchId": "DEMO-COFFEE-FUJI-20260914",
+  "asset": "Simulated green Arabica coffee beans",
+  "custodian": "Fuji Demo Coffee Warehouse (fictional teaching role)",
+  "evidenceProvider": "Course student acting as warehouse administrator; no independent audit",
+  "maximumLifetimeIssuanceKg": 10000,
+  "token": { "symbol": "FCWR", "kgPerToken": 1, "decimals": 3 },
+  "documentVersion": 2,
+  "revision": "Add reconciliation policy: match every burn transaction to an off-chain redemption request; burning does not certify delivery.",
+  "businessRules": {
+    "mint": "Custodian records simulated stock and issues receipts to holder",
+    "transfer": "Transfer simulated entitlement between holders",
+    "burn": "Holder destroys receipts to request redemption; off-chain delivery must be reconciled separately",
+    "reissueBurnedReceipts": false
+  },
+  "legalEffect": "None. No real inventory, custody, investment, fundraising or enforceable redemption rights."
+}

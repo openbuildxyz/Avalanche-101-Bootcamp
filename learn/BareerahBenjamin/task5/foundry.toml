@@ -1,0 +1,18 @@
+[profile.default]
+src = "src"
+test = "test"
+script = "script"
+out = "out"
+libs = ["vendor"]
+remappings = ["@openzeppelin/contracts/=vendor/openzeppelin/"]
+solc_version = "0.8.24"
+evm_version = "paris"
+optimizer = true
+optimizer_runs = 200
+fs_permissions = [{ access = "read", path = "./docs" }]
+
+[fuzz]
+runs = 256
+
+[fmt]
+line_length = 100
