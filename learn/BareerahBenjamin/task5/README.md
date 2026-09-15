@@ -31,7 +31,7 @@
 | Chain ID | **43113**（`0xA869`） |
 | RPC | `https://api.avax-test.network/ext/bc/C/rpc` |
 | Gas Token | 测试 AVAX |
-| 合约 | [`0xdCa267f03D04a8fc775f8161cfe52a63dAb4f73E`](https://testnet.snowtrace.io/address/0xdCa267f03D04a8fc775f8161cfe52a63dAb4f73E) |
+| 合约 | [`0xdCa267f03D04a8fc775f8161cfe52a63dAb4f73E`](https://testnet.snowscan.xyz/address/0xdCa267f03D04a8fc775f8161cfe52a63dAb4f73E) |
 | 名称 / 符号 | Fuji Coffee Warehouse Receipt / **FCWR** |
 | 精度 | 3 |
 | 初始供应量 | 0 FCWR |
@@ -88,11 +88,11 @@
 
 | 操作 | 区块 | 总供应量 | 部署钱包余额 | 接收钱包余额 | 交易 |
 | --- | --- | ---: | ---: | ---: | --- |
-| 部署成功 | 58365495 | 0 | 0 | 0 | [0xcef060fa4cf0f7c5fb027d9c01b3f5c279a40d678fa44f5450fa604a3adf6d67](https://testnet.snowtrace.io/tx/0xcef060fa4cf0f7c5fb027d9c01b3f5c279a40d678fa44f5450fa604a3adf6d67) |
-| 发行 1,000 | 58365497 | 1000 | 1000 | 0 | [0x7654c7c71e7d84b29d6ade6614ba8af2df7eed69f1942a69070843d69406985d](https://testnet.snowtrace.io/tx/0x7654c7c71e7d84b29d6ade6614ba8af2df7eed69f1942a69070843d69406985d) |
-| 转账 200 | 58365499 | 1000 | 800 | 200 | [0x9052c5ca46c13702b7cc933fcdeba7798989e8e604049b927609d2d430cb2800](https://testnet.snowtrace.io/tx/0x9052c5ca46c13702b7cc933fcdeba7798989e8e604049b927609d2d430cb2800) |
-| 销毁 50 | 58365502 | 950 | 750 | 200 | [0xc5ce76357b45a5220c700af4fbacc7ce6a0f27beffcc9aa8b6e67dc4b5e1d57b](https://testnet.snowtrace.io/tx/0xc5ce76357b45a5220c700af4fbacc7ce6a0f27beffcc9aa8b6e67dc4b5e1d57b) |
-| 更新证明至 v2 | 58365506 | 950 | 750 | 200 | [0xfafa8cb02bd8985e2ffbcdca8bed2bb7fb5352aa50e1b35fa10872de2b3ac163](https://testnet.snowtrace.io/tx/0xfafa8cb02bd8985e2ffbcdca8bed2bb7fb5352aa50e1b35fa10872de2b3ac163) |
+| 部署成功 | 58365495 | 0 | 0 | 0 | [0xcef060fa4cf0f7c5fb027d9c01b3f5c279a40d678fa44f5450fa604a3adf6d67](https://testnet.snowscan.xyz/tx/0xcef060fa4cf0f7c5fb027d9c01b3f5c279a40d678fa44f5450fa604a3adf6d67) |
+| 发行 1,000 | 58365497 | 1000 | 1000 | 0 | [0x7654c7c71e7d84b29d6ade6614ba8af2df7eed69f1942a69070843d69406985d](https://testnet.snowscan.xyz/tx/0x7654c7c71e7d84b29d6ade6614ba8af2df7eed69f1942a69070843d69406985d) |
+| 转账 200 | 58365499 | 1000 | 800 | 200 | [0x9052c5ca46c13702b7cc933fcdeba7798989e8e604049b927609d2d430cb2800](https://testnet.snowscan.xyz/tx/0x9052c5ca46c13702b7cc933fcdeba7798989e8e604049b927609d2d430cb2800) |
+| 销毁 50 | 58365502 | 950 | 750 | 200 | [0xc5ce76357b45a5220c700af4fbacc7ce6a0f27beffcc9aa8b6e67dc4b5e1d57b](https://testnet.snowscan.xyz/tx/0xc5ce76357b45a5220c700af4fbacc7ce6a0f27beffcc9aa8b6e67dc4b5e1d57b) |
+| 更新证明至 v2 | 58365506 | 950 | 750 | 200 | [0xfafa8cb02bd8985e2ffbcdca8bed2bb7fb5352aa50e1b35fa10872de2b3ac163](https://testnet.snowscan.xyz/tx/0xfafa8cb02bd8985e2ffbcdca8bed2bb7fb5352aa50e1b35fa10872de2b3ac163) |
 
 完整的交易回执、状态和权限拒绝结果见 [onchain-verification.json](evidence/onchain-verification.json)，原始广播记录见 [broadcast.json](evidence/broadcast.json)。这两个文件仅保存公开链上信息。非授权行为使用只读 `eth_call` 模拟，不发送无意义的失败交易。
 
@@ -140,11 +140,33 @@ unset PRIVATE_KEY
 
 脚本强制 `block.chainid == 43113`，按顺序部署 → 发行 → 转账 → 销毁 → 更新证明，并检查最终余额。`verify_onchain.py` 固定核对本 README 的已提交部署；若重新部署，需要同步替换脚本的地址和 `evidence/broadcast.json`。
 
-## 8. 截图材料（待补）
+## 8. 截图材料
 
-链上部署、发行、转账、销毁及源码验证均已完成；**作业要求的五张截图尚未完成，目前不能视为材料齐全**。内置浏览器连接持续超时，使用独立 Safari 作业窗口的许可尚待确认。
+以下五张图片均于 2026-09-15 在 Safari 中从 SnowScan Fuji Testnet 实际页面直接截图，未修改页面或图片内容。完整交易哈希与第 6 节链上回执一致。[截图来源清单](evidence/SCREENSHOTS.md)。
 
-[截图清单与对应交易页面](evidence/SCREENSHOTS.md) 已准备好。不会使用伪造页面或示意图片充当实际交易截图。
+### 合约部署成功
+
+![部署成功：合约地址、交易哈希与 Success 状态](evidence/01-deployment.jpg)
+
+### 测试网合约页面
+
+![Fuji 合约页面：源码验证标记与四笔交互记录](evidence/02-contract.jpg)
+
+### Token 发行
+
+ERC-20 发行事件显示从零地址转出 1,000 FCWR；浏览器将此类事件统一显示为 Token Transfer。
+
+![发行 1000 FCWR 成功](evidence/03-mint.jpg)
+
+### Token 转账
+
+![向学员钱包转账 200 FCWR 成功](evidence/04-transfer.jpg)
+
+### Token 销毁
+
+ERC-20 销毁事件显示向零地址转入 50 FCWR，链上总供应量因此从 1,000 降为 950 FCWR。
+
+![销毁 50 FCWR 成功](evidence/05-burn.jpg)
 
 ## 9. 文件索引
 
