@@ -1,0 +1,26 @@
+# Foundry / Solidity
+cache/
+out/
+foundry-pp/
+
+# Ignore local (anvil, chainId 31337) broadcasts, but KEEP the Fuji (43113)
+# deployment records -- they are the evidence for the assignment.
+broadcast/*/dry-run/
+broadcast/*/31337/
+
+# Environment & secrets -- NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Screenshots are intentionally committed (required by the assignment),
+# so images are NOT ignored.
