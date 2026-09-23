@@ -20,7 +20,8 @@ FCC 是技术学习用途的模拟碳信用 Token：`1 FCC` 模拟代表 `1 kg` 
 
 ## 合约信息
 
-- 合约地址：[`0x8E682FE2C825B6978147fe18a575Bc5C7f416eF3`](https://build.avax.network/explorer/fuji/c-chain/address/0x8E682FE2C825B6978147fe18a575Bc5C7f416eF3)
+- 合约地址：[`0x8E682FE2C825B6978147fe18a575Bc5C7f416eF3`](https://subnets-test.avax.network/c-chain/address/0x8E682FE2C825B6978147fe18a575Bc5C7f416eF3)
+- [部署交易](https://subnets-test.avax.network/c-chain/tx/0x2cf3a9d492275a3e709ecdea88463010b4c150586df5c0b76baf805166b71e6d)：区块 `58438667`，状态成功，浏览器标记 `Contract Created`
 - Token：`Fuji Carbon Credit` (`FCC`)，18 decimals
 - 初始资产证明：`ipfs://bafybeigdyrzt-simulated-carbon-report-v1`
 - [Solidity 合约源码](./contracts/FujiCarbonCredit.sol)
@@ -38,15 +39,18 @@ FCC 是技术学习用途的模拟碳信用 Token：`1 FCC` 模拟代表 `1 kg` 
 
 | 操作 | 结果 | 交易 |
 | --- | --- | --- |
-| 发行 2,000 FCC | 成功，`CarbonCreditsIssued` 与 ERC-20 `Transfer(0x0 → 发行账户)` 已记录 | [查看交易](https://build.avax.network/explorer/fuji/c-chain/tx/0x2a92dda8d5498bee3f339e4596c951a811e35a82903029dd10108c3109b51c10) |
-| 转账 100 FCC | 成功，ERC-20 `Transfer` 已记录 | [查看交易](https://build.avax.network/explorer/fuji/c-chain/tx/0x60c1a0a69f83133736845db18f31eeaf05d3081254fd04d7044d2629403f4d5a) |
-| 销毁 50 FCC | 成功，ERC-20 `Transfer(持有人 → 0x0)` 已记录 | [查看交易](https://build.avax.network/explorer/fuji/c-chain/tx/0xfd619bbb196b6a7c8ade9caba0bc5372dfbee836274bf6834d52b2c90dad93f3) |
+| 部署 FCC | 成功，`Contract Created`；创建地址与上方合约地址一致 | [查看交易](https://subnets-test.avax.network/c-chain/tx/0x2cf3a9d492275a3e709ecdea88463010b4c150586df5c0b76baf805166b71e6d) |
+| 发行 2,000 FCC | 成功，`CarbonCreditsIssued` 与 ERC-20 `Transfer(0x0 → 发行账户)` 已记录 | [查看交易](https://subnets-test.avax.network/c-chain/tx/0x2a92dda8d5498bee3f339e4596c951a811e35a82903029dd10108c3109b51c10) |
+| 转账 100 FCC | 成功，ERC-20 `Transfer` 已记录 | [查看交易](https://subnets-test.avax.network/c-chain/tx/0x60c1a0a69f83133736845db18f31eeaf05d3081254fd04d7044d2629403f4d5a) |
+| 销毁 50 FCC | 成功，ERC-20 `Transfer(持有人 → 0x0)` 已记录 | [查看交易](https://subnets-test.avax.network/c-chain/tx/0xfd619bbb196b6a7c8ade9caba0bc5372dfbee836274bf6834d52b2c90dad93f3) |
 
 通过 Fuji 公共 RPC 对交易收据和合约公开状态进行独立读取，最终状态：
 
 - 总供应量：`1,950 FCC`
 - 发行账户余额：`1,850 FCC`
 - 测试接收地址余额：`100 FCC`
+
+上述四笔交易也可通过 [Routescan 公共交易列表](https://api.routescan.io/v2/network/testnet/evm/43113/address/0x8E682FE2C825B6978147fe18a575Bc5C7f416eF3/transactions?limit=25) 独立查询。列表记录的状态均为 `true`，区块依次为 `58438667`、`58438729`、`58438732`、`58438735`。合约创建交易在 `2026-09-17 14:06:38 UTC`，其余三笔操作在 `14:11:09`、`14:11:21`、`14:11:33 UTC`。
 
 ## 本地测试
 
