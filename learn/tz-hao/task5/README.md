@@ -52,6 +52,30 @@ FCC 是技术学习用途的模拟碳信用 Token：`1 FCC` 模拟代表 `1 kg` 
 
 上述四笔交易也可通过 [Routescan 公共交易列表](https://api.routescan.io/v2/network/testnet/evm/43113/address/0x8E682FE2C825B6978147fe18a575Bc5C7f416eF3/transactions?limit=25) 独立查询。列表记录的状态均为 `true`，区块依次为 `58438667`、`58438729`、`58438732`、`58438735`。合约创建交易在 `2026-09-17 14:06:38 UTC`，其余三笔操作在 `14:11:09`、`14:11:21`、`14:11:33 UTC`。
 
+## Fuji 浏览器截图
+
+以下均为 AvaCloud Fuji 测试网公开页面的原始网页截图；钱包地址、合约地址和交易哈希本身是公开链上信息，未包含邮箱、私钥或助记词。
+
+合约地址页显示 `Fuji Carbon Credit (FCC)`、合约地址及创建交易：
+
+![FCC 合约地址页](./contract-explorer-loaded.png)
+
+部署交易页显示 `Success`、`Contract Created` 与区块 `58438667`：
+
+![FCC 部署成功](./deployment-explorer-loaded.png)
+
+发行交易页显示 `Success`，以及 `Mint of 2,000` FCC：
+
+![FCC 发行 2000](./mint-explorer-loaded.png)
+
+转账交易页显示 `Success`，以及 `Transfer of 100` FCC：
+
+![FCC 转账 100](./transfer-explorer-loaded.png)
+
+销毁交易页显示 `Success`、`burn(uint256)` 的函数选择器 `0x42966c68`，以及 50 FCC 的代币转移记录；销毁目标地址见交易日志：
+
+![FCC 销毁 50](./burn-explorer-loaded.png)
+
 ## 本地测试
 
 ```text
