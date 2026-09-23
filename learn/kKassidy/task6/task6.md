@@ -30,9 +30,9 @@
 | 初始化 Buyer Agent | ✅ 完成 | `task6.7` |
 | 搜索并选定 Recruiting Seller Agent | ✅ 完成 | `task6.8` |
 | Buyer 创建并签署 Agreement Proposal，formation signature 成功 relay | ✅ 完成 | `task6.9` |
-| Seller countersign → Escrow → Delivery → Settlement | ⏳ 后续继续 | 当前等待 Seller acceptance |
+| Seller countersign → Escrow → Delivery → Settlement | ❌ 本次未完成 | Seller 决策处理超时后，决定项被 parked/escalated |
 
-> **进阶层当前进度：**截至本次提交，Buyer 已完成 Agreement Proposal 的创建、签署与 relay，协议当前处于 `PROPOSED — awaiting seller acceptance`。Seller 在本次观察窗口内尚未 countersign，因此暂未进入 Advanced escrow/payment 阶段。后续将继续完成剩余 Agent-to-Agent 流程，并补充最终执行结果与证据。
+> **进阶层最终状态：**本次真实 CLI 实验完成了 Seller discovery、Proposal formation、Seller obligation detection、autonomous decision dispatch、retry 与 escalation 观察，但没有达到 mutual formation，也没有进入 escrow、delivery 或 settlement。
 
 ---
 
@@ -101,11 +101,11 @@ Seller 随后完成交付，Playground 显示 `VERIFIED DELIVERY`，并出现 `A
 - `Paid to seller 2.00 USDC`
 - `Escrow released`
 
-> **说明：**以上 Basic 流程运行于 Kite Playground 的 tutorial / simulated Recruiting Agent 场景。这里记录的是 Playground 展示的完整教程状态流，不将其中的 `Payment Released` 单独表述为已经独立验证的真实链上 2 USDC 转账。Circle Faucet 领取的 20 USDC 为 Arc Testnet 测试代币。
+> **说明：**以上 Basic 流程运行于 Kite Playground 的 tutorial / simulated Recruiting Agent 场景。Playground 展示的是 `Signed Offer -> Escrow -> Delivery -> Payment Released` 的模拟教程生命周期，不是已独立验证的真实链上 2 USDC 转账。Circle Faucet 领取的 20 USDC 是另行记录的 Arc Testnet 余额；本次 Advanced CLI 实验没有移动 USDC。
 
 ---
 
-## 三、进阶层：Kite CLI + Codex + Buyer Agent
+## 三、进阶层最终实验：Kite CLI + Codex + Buyer/Seller Agents
 
 ### 3.1 安装 Kite CLI
 
@@ -176,67 +176,93 @@ Seller 随后完成交付，Playground 显示 `VERIFIED DELIVERY`，并出现 `A
 
 ---
 
-### 3.6 创建并签署 Agreement Proposal
+### 3.6 Experiment A — Hosted Recruiting Seller
 
-Buyer 针对 Senior Backend Engineer (Go) 招聘需求生成协议条款，并执行 Agreement Proposal。
+Seller `recruiting-claude`（`did:kite:ind-lyon:recruiting-claude`）的 Agreement 为 `18085708-8515-42e3-a8e0-54679520cb0e`。
 
-Buyer formation signature 已成功 relay。
+Buyer 创建了 Proposal，Buyer formation signature 成功创建并 relay。随后只发送了一次 request-frame，请 Seller 处理既有 Proposal；消息最终过期且没有 Seller reply。Agreement 一直是 `PROPOSED` revision 0，Seller 从未 countersign。没有 transition proofs、spending session、Activation、escrow funding、payment、delivery 或 settlement。
+
+这次 hosted-Seller 尝试没有完成交易，不能表述为 Seller 已接受或已付款。
+
+### 3.7 Experiment B — Controlled Recruiting Seller
+
+这是同一 Passport 账号下独立创建并控制的 Seller，用于验证真实 CLI 的 Seller-side processing，不冒充 hosted `recruiting-claude`。
 
 | 项目 | 内容 |
 | --- | --- |
-| Agreement ID | `18085708-8515-42e3-a8e0-54679520cb0e` |
-| Seller | `did:kite:ind-lyon:recruiting-claude` |
-| Offer | `candidate-sourcing` |
-| Price | `2.00 USDC` |
-| Status | `PROPOSED — awaiting seller acceptance` |
+| Seller DID | `did:kite:ind-leungamigo:task6-controlled-recruiter` |
+| Runtime | `rt_01a0c9b2-86e9-7214-96a4-adf9df76c206` |
+| Payout | `0x0578a93583247b8A8606CCd0A621b98A686Dfe3B` |
+| Offering | `recruiting-intake` |
+| Commercial terms | 0.50 USDC, fixed quantity 1, `standard/v1`, Arc Testnet |
+| Registration | revision 1; `sha256:e414e95adc0611fc414376f60803ff573a3eec6c6ae6722d757b889ec990028c` |
 
-![Agreement Proposed](task6.9-agreement-proposed-kKassidy.png)
+Seller setup completed successfully: dedicated identity and active binding, governance policy, published card and registration, readiness `true`, verified tier, listed visibility, exact-DID public discovery, ready offering, and a healthy Seller listener/sweep. The Seller serve started with the Codex harness initialized.
 
-截至本次提交，在观察窗口内 Seller 尚未 countersign。
+![Controlled Seller public discovery](task6.10-controlled-seller-discovery-kKassidy.png)
 
-当前 Advanced 执行链路：
+The read-only discovery result shows the controlled Seller as listed and verified, with the `recruiting-intake` offering and `standard/v1` workflow.
 
-```text
-Kite CLI / Skills
-        ↓
-Passport Authentication
-        ↓
-Buyer Agent
-        ↓
-Seller Discovery
-        ↓
-Agreement Terms
-        ↓
-Buyer Formation Signature
-        ↓
-Proposal Relayed
-        ↓
-PROPOSED — awaiting seller acceptance
-```
+Controlled Buyer:
 
-Buyer 侧 Proposal 与 formation signature 已成功提交。当前没有进行 Advanced escrow funding 或 payment。
+- DID: `did:kite:ind-leungamigo:task6-recruiting-buyer`
+- Runtime: `rt_01a0bf07-962e-7bc4-a4cd-d64c8c39efd7`
+- Arc Testnet USDC before and after: `20.000000`
 
-**后续计划：**
+Controlled Agreement:
 
-待继续执行 Advanced 流程后，将在本作业基础上补充：
+- Agreement ID: `5e6b822b-706f-4933-80b1-5129d9a73685`
+- Terms hash: `sha256:1e83ca39e4b5188e1161cccd7aff6d27572cc6500b444664e253d2b559d0a0a7`
 
-```text
-Seller Countersign
-        ↓
-Escrow Funding
-        ↓
-Seller Delivery
-        ↓
-Buyer Verification
-        ↓
-Accept / Reject
-        ↓
-Payment Release / Refund
-        ↓
-Final State
-```
+Actual lifecycle:
 
-并追加对应截图与最终执行结果。
+1. Buyer discovered the exact controlled Seller and resolved `recruiting-intake`.
+2. Buyer created the Agreement Proposal.
+3. Buyer formation signature was created and successfully relayed.
+4. The Seller seat received the agreement and serve detected the outstanding formation obligation.
+
+![Controlled Agreement proposal](task6.11-controlled-agreement-proposed-kKassidy.png)
+
+The read-only Agreement evidence shows `PROPOSED` revision 0, the Buyer formation signature present, the Seller formation signature absent, and no financial state.
+
+5. A `decide` work item was created and dispatched to the Codex harness.
+6. Repeated decision attempts exceeded the configured five-minute execution budget and ended with `context deadline exceeded`.
+7. Retries were exhausted; the decision item was parked and escalated.
+8. No manual acceptance was used to bypass autonomous Seller decision processing.
+9. Seller serve was later shut down gracefully after evidence collection.
+
+Final Agreement state:
+
+| Field | Final value |
+| --- | --- |
+| State / revision | `PROPOSED`, revision `0` |
+| Buyer formation signature | Present |
+| Seller formation signature | Absent |
+| Seller actions | None |
+| Transition proofs | `0` |
+| Financial state | No spending session, Activation, escrow funding, payment, transfer, delivery, or settlement |
+
+Escalation:
+
+- ID: `agent_escalation_01a0ca01-c1c0-746b-92fc-a732a71dc7fc`
+- Kind: `parked-item`
+- Status: `pending`
+- State: `human_action_required`
+- Ordinary work pending after escalation: `0`
+
+![Controlled Seller escalation](task6.12-controlled-seller-escalation-kKassidy.png)
+
+The read-only escalation evidence shows a pending `parked-item` requiring human action after five decision attempts were exhausted; no owner decision had been made.
+
+Harness diagnosis:
+
+- `codex-cli 0.155.1` was authenticated and operational.
+- A standalone `codex exec` smoke test completed successfully.
+- The Seller decision workload through `kagent` repeatedly ended with `context deadline exceeded`.
+- No concrete `kagent 6.7.0` / `codex-cli 0.155.1` compatibility defect was established.
+- The precise workload-level cause therefore remains undetermined.
+
+The Advanced CLI experiment exercised real discovery, proposal formation, Seller obligation detection, autonomous decision dispatch, retry, and escalation behavior. It did not reach mutual formation or the financial lifecycle.
 
 ---
 
@@ -256,7 +282,18 @@ Final State
 | `task6.6-passport-login-kKassidy.png` | Passport CLI 登录成功 | Advanced |
 | `task6.7-buyer-agent-kKassidy.png` | Buyer Agent 初始化成功 | Advanced |
 | `task6.8-seller-discovery-kKassidy.png` | Recruiting Seller Discovery | Advanced |
-| `task6.9-agreement-proposed-kKassidy.png` | Agreement PROPOSED | Advanced |
+| `task6.9-agreement-proposed-kKassidy.png` | Hosted Seller Agreement PROPOSED with Buyer formation relay | Advanced / Experiment A |
+| `task6.10-controlled-seller-discovery-kKassidy.png` | Controlled Seller listed/verified public discovery | Advanced / Experiment B |
+| `task6.11-controlled-agreement-proposed-kKassidy.png` | Controlled Agreement PROPOSED, Buyer formation present, Seller formation absent | Advanced / Experiment B |
+| `task6.12-controlled-seller-escalation-kKassidy.png` | Controlled Seller parked-item escalation, pending human action | Advanced / Experiment B |
+
+新增的三张 controlled Seller 截图分别展示公开 discovery、Agreement `PROPOSED` 状态和 parked-item escalation。`learn/kKassidy/images/` 中的其他未跟踪图片是 Playground/Codex 安装与登录画面，不作为 controlled CLI 实验证据；任何含密钥、JWT、runtime token、私钥或 passkey secret 的画面都不应作为提交证据。
+
+如需补充最多三项只读证据，优先安全复现：
+
+1. `ksearch agent search` / `ksearch agent card`：controlled Seller 的 exact DID、listed 状态、`recruiting-intake` 与 `standard/v1`。
+2. `kagent agreement status --agreement-id 5e6b822b-706f-4933-80b1-5129d9a73685 --output json`：Buyer formation、`PROPOSED` revision 0 与 terms hash。
+3. `kagent escalation list/status` 加 `kagent work pending`：`parked-item`、`human_action_required` 与普通 pending 数量为 0。
 
 ---
 
@@ -264,10 +301,13 @@ Final State
 
 本次 Task 6 已完整完成基础层要求，包括 Kite Agent Passport、Passkey、Arc Testnet USDC Faucet，以及 Playground 中的 Signed Offer、Escrow、Verified Delivery 和 Payment Released 等 Agent Payment 核心环节。
 
-进阶层进一步使用 Kite CLI、Codex 与 Kite Skills 创建 Buyer Agent，并完成 Passport Authentication、Seller Discovery、Agreement Terms、Buyer Formation Signature 与 Proposal Relay。
+进阶层进一步使用 Kite CLI、Codex 与 Kite Skills 创建 Buyer Agent，完成 Passport Authentication、Seller Discovery、Agreement Terms、Buyer Formation Signature 与 Proposal Relay，并建立了一个独立的 controlled Seller 进行真实 Seller-side 处理实验。
 
-截至本次提交，Advanced Agreement 当前状态为：
+| 实验 | 最终状态 |
+| --- | --- |
+| Basic Playground | Completed simulated lifecycle：`Signed Offer -> Escrow -> Delivery -> Payment Released` |
+| Advanced Hosted Seller | Proposal created; Seller did not countersign; request-frame expired without reply |
+| Advanced Controlled Seller | Seller registration/listing/serve and Buyer Proposal succeeded; autonomous Seller decision timed out and was parked/escalated; Agreement remained `PROPOSED` |
+| Advanced CLI financial movement | `0 USDC` |
 
-`PROPOSED — awaiting seller acceptance`
-
-Seller 尚未在本次观察窗口内 countersign，因此本次阶段性提交没有将 Advanced escrow/payment 描述为已经完成。后续将继续执行剩余 Agent-to-Agent 流程，并在完成后更新本作业的最终状态和相关证据。
+因此，本次 Advanced 实验没有完成支付或结算。它成功验证了 CLI discovery、Proposal formation、Seller obligation detection、autonomous decision dispatch、retry 与 escalation，但没有达到 mutual formation，也没有发生任何 USDC movement。
