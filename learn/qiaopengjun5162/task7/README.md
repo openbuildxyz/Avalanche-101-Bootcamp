@@ -3,7 +3,7 @@
 **提交人**：qiaopengjun5162 | **对应课程**：第七章（Avalanche Builder Launchpad #7）
 **提交方式**：PR 提交到 `openbuildxyz/Avalanche-101-Bootcamp`
 **本文件位置**：`learn/qiaopengjun5162/task7/README.md`
-**代码仓库**：https://github.com/qiaopengjun5162/Mini-DEX (commit fde9560)
+**代码仓库**：https://github.com/qiaopengjun5162/Mini-DEX (commit 53e62ca)
 
 ---
 
@@ -13,9 +13,9 @@
 
 - `npm test` 全部通过
 
-#### ✨ 新增：self-trade（自成交）防护
+#### ✨ 新加：self-trade（自成交）防护
 
-在 `orderbook.ts:submit()` 的撮合循环中，当 taker 的挂单遇到自己的 maker 单时跳过不成交：
+模板原本允许自成交（有 `// TODO` 注释），我们在 `orderbook.ts:submit()` 的撮合循环中加上了跳过逻辑：
 
 ```typescript
 // 跳过自己的订单
@@ -27,14 +27,12 @@ if (taker.owner === maker.owner) {
 if (level.orders.every((o) => o.owner === taker.owner)) break;
 ```
 
-#### ✨ 新增：时间优先测试
+加上 2 条 self-trade 测试（拒绝全自成交、跳过自己的单吃别人的），原模板已有时间优先测试。
 
-已在 `orderbook.test.ts` 中补充 self-trade 和 time-priority 测试用例。
-
-**测试结果**：
+**测试结果**（35 tests, 比模板多了 7 条）：
 
 ```
- ✓ src/engine/orderbook.test.ts (19 tests)
+ ✓ src/engine/orderbook.test.ts (19 tests)   ← 模板 12 → 加了 7 条测例
  ✓ src/fixed.test.ts (4 tests)
  ✓ src/ledger.test.ts (3 tests)
  ✓ src/marketmaker.test.ts (9 tests)
@@ -62,20 +60,38 @@ Deposit 500 USDC 到 Vault：
 
 ### 3. 端到端演示（20 分）
 
-完整 E2E 流程：EIP-712 登录 → 查余额 → deposit → 链上回显 → withdraw → 链上回显
+完整 E2E 流程：EIP-712 登录 → 查余额 → deposit → 链上回显 → withdraw → 链上回显 → **两个不同地址成交**
+
+#### 登录 + 充值 + 提现（部署者账户）
 
 ```
 账户: 0xE91e2DF7cE50BCA5310b7238F6B1Dfcd15566bE5
-deposit 100 USDC: success
+deposit 100 USDC: success                           tx: 0x330c27bd...
 deposit 5 WAVAX: success
 入账后余额: {"USDC":{"available":"600"},"WAVAX":{"available":"5"}}
-withdraw 50 USDC: success
+withdraw 50 USDC: success                           tx: 0x40fa2e73...
 链上 USDC 变化: 50000000 (期望 50000000)
 ```
 
-#### Withdraw 交易
+**Deposit 交易 hash**：`0x330c27bd6777649168a51db0a7a4b63c5baa544b2bb4c352ad1fcc3ecab39e8b`
+**Withdraw 交易 hash**：`0x40fa2e7307110f7eaeae600829be47dd9634ed4f211cf995a6f32cde29ed1c7b`
 
-`0x40fa2e7307110f7eaeae600829be47dd9634ed4f211cf995a6f32cde29ed1c7b`
+#### 两地址成交（进阶必做）
+
+| 角色 | 地址 | 操作 |
+|------|------|------|
+| **做市账户 (Maker)** | `0x0CE940C8cbaCd436b18A1ce867920CF68ec0dcc7` | 挂 sell limit 0.5 WAVAX @ 10.115 |
+| **部署者 (Taker)** | `0xE91e2DF7cE50BCA5310b7238F6B1Dfcd15566bE5` | buy market 0.5 WAVAX 吃掉挂单 |
+
+成交结果：
+```
+成交: fills[0] = { maker: 0x0ce940..., taker: 0xe91e2d..., price: "10.115", qty: "0.5" }
+成交后余额:
+  Taker USDC:  2160  → 2154.9425（减少 ≈ 0.5 × 10.115）
+  Taker WAVAX: 20    → 20.5（增加 0.5）
+```
+
+![两地址成交截图](two-addr-trade.png)
 
 ---
 
@@ -228,6 +244,7 @@ psql -d mini_dex -c "SELECT count(*) FROM orders;"
 | 3 个 Fuji 合约地址 | ✅ | Vault, MockUSDC, MockWAVAX |
 | deposit tx hash | ✅ | `0x330c27bd6777649168a51db0a7a4b63c5baa544b2bb4c352ad1fcc3ecab39e8b` |
 | withdraw tx hash | ✅ | `0x40fa2e7307110f7eaeae600829be47dd9634ed4f211cf995a6f32cde29ed1c7b` |
+| 两地址成交 | ✅ | Maker `0x0CE940...dcc7` ↔ Taker `0xE91e2D...66bE5` |
 | 做市机器人 | ✅ | 3 买/3 卖，3000+ ticks |
 | WS 私有订单频道 | ✅ | sendOrder(address, data) |
 | IOC/FOK 订单 | ✅ | 5 条测试 |
@@ -248,3 +265,7 @@ psql -d mini_dex -c "SELECT count(*) FROM orders;"
 ### 做市机器人截图
 
 ![做市机器人运行日志](mm-card.png)
+
+### 两地址成交截图
+
+![两地址成交](two-addr-trade.png)
