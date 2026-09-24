@@ -79,7 +79,7 @@ withdraw 50 USDC: success
 
 ---
 
-## 二、进阶部分：34 分 ✅
+## 二、进阶部分：40 分 ✅
 
 ### 1. 做市机器人（10 分）
 
@@ -135,7 +135,7 @@ deposit 再 20 USDC                       → ❌ Vault: user hardcap exceeded
 **修复过的问题**：`tokenHardCaps` 的全局上限检查原来按用户余额判断，改成按合约总余额：
 `IERC20(token).balanceOf(address(this)) + amount`
 
-### 5. AI 安全审查 + 修复真实问题（8 分）
+### 5. AI 安全审查 + 修复真实问题（8 分） ✅
 
 用 Slither 扫描 Vault.sol：
 
@@ -145,13 +145,84 @@ slither src/Vault.sol → 21 contracts, 0 Critical, 0 Major
 
 无严重问题，仅 informational 级别发现。定位并修复了 `tokenHardCaps` 全局限额逻辑 BUG。
 
+### 6. 数据持久化 — PostgreSQL 落盘（10 分） ✅
+
+#### 问题背景
+
+默认 Mini-DEX 服务所有数据存内存，重启后订单/账户/交易全部丢失。Task 7 要求数据持久化。
+
+#### 选型决策
+
+| 方案 | 优点 | 缺点 |
+|------|------|------|
+| SQLite (`better-sqlite3`) | 零配置 | 不支持并发写入，Vite 打包常报 WASI/Worker 错误 |
+| **PostgreSQL（最终采用）** | 稳定、并发 | 需本地安装 PG |
+
+听老用户的建议选择了 PostgreSQL，本地直接用 Homebrew 装的 psql。
+
+#### 架构设计
+
+`server/src/db.ts` — 114 行代码，无 ORM，纯 `pg` 驱动 + raw SQL：
+
+- **orders 表**：全字段落盘，bigint/uint256 存 TEXT（BigInt → String 避免精度丢失）
+- **ledger 表**：address → JSONB 存两币种余额
+- **trades 表**：price/size/side/taker/maker/createTime 等字段
+
+数据流：
+
+```
+deposit/withdraw → 链事件 → 更新 ledger
+placeOrder/cancelOrder → 更新 orderbook
+fill/match → 记录 trades
+                         ↓
+             每 5 秒 setInterval 批量写入
+             process.on('exit') 最终落盘
+```
+
+启动流程：
+
+```
+server.ts → initDb() → CREATE TABLE IF NOT EXISTS → loadOrders() → loadAccounts() → restore()
+```
+
+#### 关键代码
+
+```typescript
+// db.ts 核心：loadOrders — 从 PG 恢复挂单
+export async function loadOrders(pool: Pool): Promise<Order[]> {
+  const { rows } = await pool.query(
+    "SELECT id, owner, price, size, side, type, status, created_at FROM orders"
+  );
+  return rows.map((r) => ({
+    ...r,
+    price: Fixed.from(r.price),
+    size: Fixed.from(r.size),
+    createdAt: Number(r.created_at),
+  }));
+}
+```
+
+#### 验证结果
+
+`npm test` 35/35 ✅、`forge test` 13/13 ✅ 全部通过。
+
+```bash
+psql -d mini_dex -c "SELECT count(*) FROM orders;"
+ orders
+--------
+      6
+```
+服务停掉 → 重启 → `GET /orderbook` 返回正常订单簿，PG 表中数据完整。
+
+![PostgreSQL 持久化验证](pg-persist-card.png)
+
 ---
 
 ## 三、最终提交物清单
 
 | 提交物 | 状态 | 位置 |
 |--------|------|------|
-| 代码仓库 | ✅ | https://github.com/qiaopengjun5162/Mini-DEX (commit fde9560) |
+| 代码仓库 | ✅ | https://github.com/qiaopengjun5162/Mini-DEX (commit 53e62ca) |
 | npm test 全绿 | ✅ | 35/35 passed |
 | forge test 全绿 | ✅ | 13/13 passed |
 | 3 个 Fuji 合约地址 | ✅ | Vault, MockUSDC, MockWAVAX |
@@ -162,6 +233,7 @@ slither src/Vault.sol → 21 contracts, 0 Critical, 0 Major
 | IOC/FOK 订单 | ✅ | 5 条测试 |
 | 链上硬上限 | ✅ | setHardCap + 合约总余额检查 |
 | AI 安全审查 | ✅ | Slither + tokenHardCaps 修复 |
+| 数据持久化 | ✅ | PostgreSQL 落盘 + 重启恢复 |
 
 ---
 
