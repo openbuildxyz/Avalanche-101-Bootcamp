@@ -1,0 +1,19 @@
+{
+  "deliverable": "One sourced Senior AI Engineer candidate located in Beijing, Shanghai, Guangzhou, or Shenzhen, including a role-fit profile, matched AI engineering keywords, and the candidate's explicit interest evidence with a concrete next step.",
+  "acceptanceCriteria": "The JSON artifact identifies one real candidate whose experience matches senior AI engineering requirements, states the candidate's location and relevant skills, and includes verifiable evidence that the candidate explicitly expressed interest with a concrete next step.",
+  "price": {
+    "amount": "2",
+    "asset": "USDC"
+  },
+  "priceSchedule": {},
+  "escrow": {
+    "payoutAddress": "0x8D0bFEb94FbBFB57b885B9920ffC1081f024d5C7"
+  },
+  "disputePolicy": {
+    "arbiterAgentId": "did:kite:corp-kite:demo-arbiter"
+  },
+  "registrationBasis": {
+    "registrationHash": "sha256:15ac3bbdfc809d0d3a056d0a5bb01b55344daa0ea44078ab012faa261f0466da",
+    "offeringId": "candidate-sourcing"
+  }
+}
