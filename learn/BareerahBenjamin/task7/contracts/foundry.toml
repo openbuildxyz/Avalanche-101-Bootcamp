@@ -1,0 +1,23 @@
+# mini-dex / contracts —— Foundry 配置
+[profile.default]
+src = "src"
+test = "test"
+script = "script"
+out = "out"
+libs = ["lib"]
+
+# 源码写 `pragma solidity ^0.8.20`；这里固定编译器版本让每个人的 bytecode 一致
+# （OpenZeppelin 5.7 的 EIP712.sol 要求 >=0.8.24，所以不能再低）
+solc_version = "0.8.28"
+evm_version = "cancun"   # OZ 5.x 用到 mcopy；Avalanche C-Chain 自 Etna 升级后支持 Cancun
+optimizer = true
+optimizer_runs = 200
+
+[fmt]
+line_length = 120
+tab_width = 4
+
+# `forge script ... --rpc-url anvil` / `--rpc-url fuji` 可以直接用这里的别名
+[rpc_endpoints]
+anvil = "http://127.0.0.1:8545"
+fuji = "https://api.avax-test.network/ext/bc/C/rpc"
