@@ -24,7 +24,7 @@ https://build.avax.network/console/primary-network/faucet
 
 提供部署成功后截图，以及链上合约的地址
 合约地址：0x8E678c5dcBA72d3a5649b21a7353762730E11561
- [部署截图](/learn/steven7289665382-sys/task2_steven7289665382-sys.png) 
+ ![部署截图](./task2_steven7289665382-sys.png) 
 
 ## 截止时间
 
