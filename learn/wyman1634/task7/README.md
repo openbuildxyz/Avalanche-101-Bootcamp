@@ -4,7 +4,7 @@
 
 - 仓库：<https://github.com/wyman1634/Mini-DEX>
 - 分支：[`submission/wyman1634-task7`](https://github.com/wyman1634/Mini-DEX/tree/submission/wyman1634-task7)
-- 最终提交：[`7f0cca1`](https://github.com/wyman1634/Mini-DEX/commit/7f0cca1ee4ff578ab6192e83bbd08c1d862b5b12)
+- 最终提交：[`bc7391e`](https://github.com/wyman1634/Mini-DEX/commit/bc7391e45eb821be1861a7674a2f2afd5b768145)
 - Fuji 双账户演示脚本：[`d7447dc`](https://github.com/wyman1634/Mini-DEX/commit/d7447dc14f21c7555aed77e37a6df672c68e4e65)
 - self-trade 修复提交：[`7acfe8a`](https://github.com/wyman1634/Mini-DEX/commit/7acfe8a)
 
