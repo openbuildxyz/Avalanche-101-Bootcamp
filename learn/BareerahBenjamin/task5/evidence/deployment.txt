@@ -1,0 +1,33 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 1.14s
+Compiler run successful!
+2026-09-14T13:59:46.951778Z  WARN foundry_evm_traces::debug::sources: failed to parse contract definitions for test/CoffeeWarehouseToken.t.sol
+2026-09-14T13:59:48.932659Z  WARN foundry_fork_db::cache: Failed to read cache file err=Os { code: 2, kind: NotFound, message: "No such file or directory" } path="/Users/bareerah/.foundry/cache/rpc/fuji/58365493"
+2026-09-14T13:59:52.765316Z  WARN evm::traces::external: etherscan config not found
+Script ran successfully.
+
+== Return ==
+token: contract CoffeeWarehouseToken 0xdCa267f03D04a8fc775f8161cfe52a63dAb4f73E
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 43113
+
+Estimated gas price: 0.00000017 gwei
+
+Estimated total gas used for script: 1792440
+
+Estimated amount required: 0.0000000003047148 ETH
+
+==========================
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/bareerah/Development/avalanche/task5-rwa-work/broadcast/DeployAndDemo.s.sol/43113/run-latest.json
+
+Sensitive values saved to: /Users/bareerah/Development/avalanche/task5-rwa-work/cache/DeployAndDemo.s.sol/43113/run-latest.json

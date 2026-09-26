@@ -1,0 +1,18 @@
+{
+  "assetId": "GPU-LEASE-2026-09",
+  "assetType": "GPU server equipment rental receivable",
+  "custodian": "Avalanche RWA Lab (simulated)",
+  "equipment": {
+    "model": "NVIDIA H100 server",
+    "serialNumber": "SIM-H100-AVAX-0001",
+    "location": "Singapore data center (simulated)"
+  },
+  "rentalAgreement": "LEASE-GPU-2026-09-001",
+  "invoice": "INV-GPU-2026-09-001",
+  "billingPeriod": "2026-09",
+  "confirmedReceivableUSDC": 10000,
+  "tokenMapping": "1 GRRT represents 1 USDC face value of the confirmed rental receivable",
+  "status": "confirmed",
+  "disclaimer": "Course demonstration only. No real asset, fundraising, redemption promise, or investment product is involved."
+}
+
