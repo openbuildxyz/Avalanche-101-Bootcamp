@@ -7,7 +7,7 @@ import {HahnDexPriceReader} from "../src/HahnDexPriceReader.sol";
 
 /// @notice Read-only report for screenshots after HAHN/WAVAX liquidity exists.
 contract ReadHahnDexPrice is Script {
-    address private constant HAHN = 0xef55c8d97a7e35ffabbd141bd5f8302b98175095;
+    address private constant HAHN = 0xEF55c8d97a7e35FfAbbd141bD5F8302B98175095;
     address private constant PANGOLIN_ROUTER = 0x2D99ABD9008Dc933ff5c0CD271B88309593aB921;
 
     function run() external {

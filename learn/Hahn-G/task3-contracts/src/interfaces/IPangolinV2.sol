@@ -4,6 +4,7 @@ pragma solidity ^0.8.30;
 interface IERC20Minimal {
     function balanceOf(address account) external view returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
+    function transfer(address to, uint256 amount) external returns (bool);
 }
 
 interface IERC20MetadataMinimal is IERC20Minimal {
@@ -24,10 +25,7 @@ interface IPangolinRouter {
     function factory() external view returns (address);
     function WAVAX() external view returns (address);
 
-    function getAmountsOut(uint256 amountIn, address[] calldata path)
-        external
-        view
-        returns (uint256[] memory amounts);
+    function getAmountsOut(uint256 amountIn, address[] calldata path) external view returns (uint256[] memory amounts);
 
     function addLiquidityAVAX(
         address token,

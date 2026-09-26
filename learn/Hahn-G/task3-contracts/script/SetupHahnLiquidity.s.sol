@@ -3,15 +3,11 @@ pragma solidity ^0.8.30;
 
 import {Script, console2} from "forge-std/Script.sol";
 
-import {
-    IERC20Minimal,
-    IPangolinFactory,
-    IPangolinRouter
-} from "../src/interfaces/IPangolinV2.sol";
+import {IERC20Minimal, IPangolinFactory, IPangolinRouter} from "../src/interfaces/IPangolinV2.sol";
 
 /// @notice Creates the HAHN/WAVAX Pangolin V2 pair when needed and seeds liquidity.
 contract SetupHahnLiquidity is Script {
-    address private constant HAHN = 0xef55c8d97a7e35ffabbd141bd5f8302b98175095;
+    address private constant HAHN = 0xEF55c8d97a7e35FfAbbd141bD5F8302B98175095;
     address private constant PANGOLIN_ROUTER = 0x2D99ABD9008Dc933ff5c0CD271B88309593aB921;
 
     uint256 private constant TOKEN_LIQUIDITY = 10_000 ether;
@@ -35,9 +31,7 @@ contract SetupHahnLiquidity is Script {
 
         require(IERC20Minimal(HAHN).approve(PANGOLIN_ROUTER, TOKEN_LIQUIDITY), "HAHN approve failed");
 
-        (uint256 tokenUsed, uint256 avaxUsed, uint256 liquidity) = router.addLiquidityAVAX{
-            value: AVAX_LIQUIDITY
-        }(
+        (uint256 tokenUsed, uint256 avaxUsed, uint256 liquidity) = router.addLiquidityAVAX{value: AVAX_LIQUIDITY}(
             HAHN,
             TOKEN_LIQUIDITY,
             TOKEN_LIQUIDITY * 99 / 100,

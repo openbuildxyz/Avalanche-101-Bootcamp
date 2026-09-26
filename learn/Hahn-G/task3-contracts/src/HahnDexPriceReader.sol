@@ -1,12 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-import {
-    IERC20MetadataMinimal,
-    IPangolinFactory,
-    IPangolinPair,
-    IPangolinRouter
-} from "./interfaces/IPangolinV2.sol";
+import {IERC20MetadataMinimal, IPangolinFactory, IPangolinPair, IPangolinRouter} from "./interfaces/IPangolinV2.sol";
 
 /// @title HahnDexPriceReader
 /// @notice Reads the HAHN/WAVAX price from Pangolin V2 on Avalanche Fuji.

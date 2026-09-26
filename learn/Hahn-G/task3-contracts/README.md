@@ -1,10 +1,12 @@
 # Task 3 contracts — HAHN/Pangolin Fuji
 
-This Foundry project implements the first three Task 3 requirements:
+This Foundry project implements all Task 3 requirements:
 
 1. use Pangolin V2 on Avalanche Fuji;
 2. create the HAHN/WAVAX pair and seed it with liquidity;
-3. read the price from Pair reserves and Router swap quotes.
+3. read the price from Pair reserves and Router swap quotes;
+4. deploy a sale contract that uses the live quote in its purchase logic;
+5. execute a real Fuji purchase whose HAHN output is determined by Pangolin.
 
 ## Fixed Fuji addresses
 
@@ -73,4 +75,16 @@ With the untouched initial reserves, the two sample quotes should be approximate
 ```bash
 forge test -vv
 ```
+
+Expected result: `9 passed, 0 failed`.
+
+## Fuji deployment
+
+| Item | Address / transaction |
+| --- | --- |
+| HAHN/WAVAX Pair | `0x52F6D763f93F762406BD7D74538E9fd1F62B5930` |
+| Add liquidity tx | `0x37286e52d409c1b467793aac27d304abd83467dbe38c77c29d22a6e155007315` |
+| Price reader | `0x6eC9d8e9EAfc90D677096B94B9886992E58FD975` |
+| DEX-priced sale | `0xE948ac99e17f625D338F0082a21c53BcD643A250` |
+| Live-price purchase tx | `0xdbe85f33e36178c71f875f9e58a424ea9dbfd3e2b5cf1ea068912c183bd12ff4` |
 

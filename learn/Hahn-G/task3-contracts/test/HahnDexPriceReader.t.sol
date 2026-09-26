@@ -53,18 +53,13 @@ contract MockRouter {
         WAVAX = wavax_;
     }
 
-    function getAmountsOut(uint256 amountIn, address[] calldata path)
-        external
-        view
-        returns (uint256[] memory amounts)
-    {
+    function getAmountsOut(uint256 amountIn, address[] calldata path) external view returns (uint256[] memory amounts) {
         MockPair pair = MockPair(MockFactory(factory).getPair(path[0], path[1]));
         require(address(pair) != address(0), "pair missing");
 
         (uint112 reserve0, uint112 reserve1,) = pair.getReserves();
-        (uint256 reserveIn, uint256 reserveOut) = pair.token0() == path[0]
-            ? (uint256(reserve0), uint256(reserve1))
-            : (uint256(reserve1), uint256(reserve0));
+        (uint256 reserveIn, uint256 reserveOut) =
+            pair.token0() == path[0] ? (uint256(reserve0), uint256(reserve1)) : (uint256(reserve1), uint256(reserve0));
 
         uint256 amountInWithFee = amountIn * 997;
         uint256 amountOut = amountInWithFee * reserveOut / (reserveIn * 1000 + amountInWithFee);
