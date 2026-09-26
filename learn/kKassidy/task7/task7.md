@@ -121,3 +121,26 @@ Withdraw 后链上 USDC 钱包余额为 `1001 USDC`。
 - [x] 余额显示截图
 - [x] 两个不同地址完成成交
 - [x] 真实 Withdraw + tx hash
+
+---
+
+## 进阶项：AI 安全审查 + 修复真实问题（8 分）
+
+本项工作对应 8 分进阶评分项，独立于基础任务的 Self-trade 要求。
+
+- 修复提交：[2bfa39f — [Task7] Fix dust deposit ingestion DoS](https://github.com/kKassidy/Mini-DEX/commit/2bfa39f)
+- 安全报告：[SECURITY_REVIEW.md（main）](https://github.com/kKassidy/Mini-DEX/blob/main/SECURITY_REVIEW.md)；[修复提交中的报告快照](https://github.com/kKassidy/Mini-DEX/blob/2bfa39f/SECURITY_REVIEW.md)
+
+### 发现与修复
+
+AI 辅助源码安全审查发现：合法的 dust WAVAX 存款可能中断存款事件处理或恢复。WAVAX 使用 18 位小数，链下账本使用 8 位小数，小于 `10^10 wei` 的存款换算后为 `0n`。此前该值传入 `Ledger.credit(0)` 会抛出异常，可能阻止实时批次中后续有效事件入账，或中断历史重放，使恢复不完整。
+
+修复在 `server/src/chain.ts` 中仅跳过换算金额为 `0n` 的 Deposit 事件，使用 `continue` 而非 `return`，确保后续事件继续处理。`Ledger.credit` 的金额必须为正的不变量保持不变，无关错误不会被静默吞掉。
+
+### 回归验证与范围
+
+- 新增 `server/src/chain.test.ts`，8 个新增链事件测试通过；服务端完整测试共 6 个文件、56 个测试通过。
+- 覆盖历史重放 dust + 有效存款、实时 dust + 有效存款、换算边界、正常 WAVAX/USDC 存款、无关回调错误，以及提现行为保持不变。
+- Typecheck 与 `git diff --check` 均通过。
+
+上述问题使用 mocked/in-memory 输入复现；报告未声称存在真实链上利用交易。审查还识别了其他问题，但本补丁未修复这些问题，也不将其列为已完成的进阶任务。
