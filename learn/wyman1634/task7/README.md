@@ -4,7 +4,8 @@
 
 - 仓库：<https://github.com/wyman1634/Mini-DEX>
 - 分支：[`submission/wyman1634-task7`](https://github.com/wyman1634/Mini-DEX/tree/submission/wyman1634-task7)
-- 最终提交：[`d7447dc`](https://github.com/wyman1634/Mini-DEX/commit/d7447dc14f21c7555aed77e37a6df672c68e4e65)
+- 最终提交：[`7f0cca1`](https://github.com/wyman1634/Mini-DEX/commit/7f0cca1ee4ff578ab6192e83bbd08c1d862b5b12)
+- Fuji 双账户演示脚本：[`d7447dc`](https://github.com/wyman1634/Mini-DEX/commit/d7447dc14f21c7555aed77e37a6df672c68e4e65)
 - self-trade 修复提交：[`7acfe8a`](https://github.com/wyman1634/Mini-DEX/commit/7acfe8a)
 
 撮合引擎保留价格优先与同价 FIFO；当 maker 与 taker 地址相同时跳过该 maker，继续匹配下一位合格对手方。新增用例验证自己的挂单保持不变、同价下一位完成成交。
