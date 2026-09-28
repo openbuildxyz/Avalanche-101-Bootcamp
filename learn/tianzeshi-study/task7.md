@@ -40,3 +40,6 @@ withdraw tx: [0x7a4a72de9dfe359c48f481ef9d0b81aa6e2c775c3902673d6d10b59bb68b8c0f
 ![login](./task7images/signin-minidex.png)
 ![mint](./task7images/mint-usdc.png)
 ![transaction](./task7images/trade.png)
+
+repo: https://github.com/tianzeshi-study/Mini-DEX 
+added commit: https://github.com/tianzeshi-study/Mini-DEX/commit/9b7284565e9dfbf82fbd6329a5ba1c607f11767f
