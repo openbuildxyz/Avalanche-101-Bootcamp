@@ -1,0 +1,32 @@
+{
+  "name": "mini-dex-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "mini-dex 教学用后端：撮合引擎 + 内存账本 + EIP-712 登录 + Vault 事件监听",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx scripts/smoke.ts",
+    "e2e": "tsx scripts/e2e-anvil.ts",
+    "e2e:fuji": "tsx scripts/e2e-fuji.ts",
+    "prep:fuji": "tsx scripts/prep-fuji.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "dotenv": "^16.4.7",
+    "hono": "^4.6.14",
+    "jose": "^5.9.6",
+    "viem": "^2.21.54",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
