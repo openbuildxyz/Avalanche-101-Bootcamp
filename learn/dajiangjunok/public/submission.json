@@ -1,0 +1,66 @@
+{
+  "github": "dajiangjunok",
+  "status": "fuji-deployed-kite-and-course-repository-pending",
+  "fujiChainId": 43113,
+  "task1": {
+    "builderHubScreenshot": "public/task1-1.png",
+    "shareScreenshot": "public/task1-2.jpg"
+  },
+  "task2": {
+    "contract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+    "deploymentTx": "0xe39fac27477cffd60730b299c15b2c53cad80cb622d735c4b62a9871a5fba0a8",
+    "scaffoldScreenshot": "public/evidence/fuji/scaffold-eth-fuji.png"
+  },
+  "task3": {
+    "dex": "Learning DEX (self-deployed)",
+    "tokenA": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+    "tokenB": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+    "pair": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+    "businessContract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+    "liquidityTx": "0x6e70f5974891c9d5526839d803b7af939dc0567044b721f091ff8a67d793b8a5",
+    "purchaseTx": "0xbf44cf05be1c8664701078ff09a356ff38efdba2f845df812174832d44a5ac9c",
+    "screenshots": [
+      "public/evidence/fuji/add-liquidity.png",
+      "public/evidence/fuji/dex-purchase.png"
+    ]
+  },
+  "task4": {
+    "document": "task4.md",
+    "status": "written"
+  },
+  "task5": {
+    "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+    "deploymentTx": "0xe4ae5e6665609fde635946b6f1eddcb7064bc09e46ed0dd0553f5e9b6684a0b4",
+    "mintTx": "0xc49c30d4ca6cb6b45fb1e8bc5a5555f6a20f35b57fcf11a5edb86a9a24c4d6f4",
+    "transferTx": "0xdc48ae344e7e2eccd46310287de46b574220ba1019138f0b289b85969e642fec",
+    "burnTx": "0x1139005411ce8a24f99cba45f788668aef28351237864739add1138bac81a079",
+    "screenshots": [
+      "public/evidence/fuji/deploy-CoffeeWarehouseReceipt.png",
+      "public/evidence/fuji/rwa-explorer.png",
+      "public/evidence/fuji/rwa-mint.png",
+      "public/evidence/fuji/rwa-transfer.png",
+      "public/evidence/fuji/rwa-burn.png"
+    ]
+  },
+  "task6": {
+    "passportWallet": null,
+    "agreementId": null,
+    "released": false,
+    "screenshots": []
+  },
+  "task7": {
+    "courseRepository": null,
+    "baseAsset": "0xb0484142986371435B2f57777616f06010E91fB0",
+    "quoteAsset": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+    "exchange": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+    "depositTx": "0xf8634842a52545d52c0844b7848e7c4a659399f8429fce258d64beb788369111",
+    "tradeTx": "0xc2a4c104ca186cd4567aae13b37df056dd457058884fd7284fc46335bf5a105f",
+    "withdrawTx": "0xb86424acd6d57399d72feae2c517f6069006718db0f11d624fe4d3be4e0d423b",
+    "screenshots": [
+      "public/evidence/fuji/wallet-login-balances.png",
+      "public/evidence/fuji/deposit-quote.png",
+      "public/evidence/fuji/settle-trade.png",
+      "public/evidence/fuji/withdraw-base.png"
+    ]
+  }
+}

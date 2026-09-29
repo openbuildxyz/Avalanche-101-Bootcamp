@@ -1,0 +1,432 @@
+{
+  "chainId": 43113,
+  "source": "Live Fuji RPC and genuine explorer pages",
+  "screenshots": [
+    "wallet-login-balances.png",
+    "deploy-BootcampToken.png",
+    "add-liquidity.png",
+    "dex-purchase.png",
+    "deploy-CoffeeWarehouseReceipt.png",
+    "rwa-mint.png",
+    "rwa-transfer.png",
+    "rwa-burn.png",
+    "deposit-quote.png",
+    "settle-trade.png",
+    "withdraw-base.png",
+    "rwa-explorer.png"
+  ],
+  "verified": [
+    {
+      "step": "deploy-BootcampToken",
+      "hash": "0xe39fac27477cffd60730b299c15b2c53cad80cb622d735c4b62a9871a5fba0a8",
+      "chainId": 43113,
+      "blockNumber": 58846981,
+      "state": {
+        "名称": "Dajiangjun Bootcamp Token",
+        "符号": "DJJ",
+        "decimals": "18",
+        "总供应 DJJ": "1000000.0",
+        "部署账户 DJJ": "1000000.0"
+      },
+      "events": [
+        {
+          "contract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+          "event": "OwnershipTransferred",
+          "args": {
+            "previousOwner": "0x0000000000000000000000000000000000000000",
+            "newOwner": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7"
+          }
+        },
+        {
+          "contract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+          "event": "Transfer",
+          "args": {
+            "from": "0x0000000000000000000000000000000000000000",
+            "to": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "value": "1000000000000000000000000"
+          }
+        }
+      ]
+    },
+    {
+      "step": "add-liquidity",
+      "hash": "0x6e70f5974891c9d5526839d803b7af939dc0567044b721f091ff8a67d793b8a5",
+      "chainId": 43113,
+      "blockNumber": 58847028,
+      "state": {
+        "池内 DJJ": "100000.0",
+        "池内 mUSD": "10000.0",
+        "买方 DJJ": "0.0",
+        "支付 100 mUSD 的链上报价 DJJ": "987.15803439706129885"
+      },
+      "events": [
+        {
+          "contract": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+          "event": "Transfer",
+          "args": {
+            "from": "0x0000000000000000000000000000000000000000",
+            "to": "0x000000000000000000000000000000000000dEaD",
+            "value": "1000"
+          }
+        },
+        {
+          "contract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+          "event": "Transfer",
+          "args": {
+            "from": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "to": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+            "value": "100000000000000000000000"
+          }
+        },
+        {
+          "contract": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+          "event": "Transfer",
+          "args": {
+            "from": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "to": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+            "value": "10000000000"
+          }
+        },
+        {
+          "contract": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+          "event": "Transfer",
+          "args": {
+            "from": "0x0000000000000000000000000000000000000000",
+            "to": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "value": "31622776601682793"
+          }
+        },
+        {
+          "contract": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+          "event": "Sync",
+          "args": {
+            "reserve0": "100000000000000000000000",
+            "reserve1": "10000000000"
+          }
+        },
+        {
+          "contract": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+          "event": "LiquidityAdded",
+          "args": {
+            "provider": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "amount0": "100000000000000000000000",
+            "amount1": "10000000000",
+            "shares": "31622776601682793"
+          }
+        }
+      ]
+    },
+    {
+      "step": "dex-purchase",
+      "hash": "0xbf44cf05be1c8664701078ff09a356ff38efdba2f845df812174832d44a5ac9c",
+      "chainId": 43113,
+      "blockNumber": 58847049,
+      "state": {
+        "池内 DJJ": "99012.84196560293870115",
+        "池内 mUSD": "10100.0",
+        "买方 DJJ": "987.15803439706129885",
+        "支付 100 mUSD 的链上报价 DJJ": "967.830460108690744679"
+      },
+      "events": [
+        {
+          "contract": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+          "event": "Transfer",
+          "args": {
+            "from": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "to": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+            "value": "100000000"
+          }
+        },
+        {
+          "contract": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+          "event": "Approval",
+          "args": {
+            "owner": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+            "spender": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+            "value": "100000000"
+          }
+        },
+        {
+          "contract": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+          "event": "Transfer",
+          "args": {
+            "from": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+            "to": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+            "value": "100000000"
+          }
+        },
+        {
+          "contract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+          "event": "Transfer",
+          "args": {
+            "from": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+            "to": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "value": "987158034397061298850"
+          }
+        },
+        {
+          "contract": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+          "event": "Sync",
+          "args": {
+            "reserve0": "99012841965602938701150",
+            "reserve1": "10100000000"
+          }
+        },
+        {
+          "contract": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+          "event": "Swap",
+          "args": {
+            "sender": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+            "tokenIn": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+            "amountIn": "100000000",
+            "amountOut": "987158034397061298850",
+            "to": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596"
+          }
+        },
+        {
+          "contract": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+          "event": "Purchased",
+          "args": {
+            "buyer": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "quotePaid": "100000000",
+            "tokensReceived": "987158034397061298850"
+          }
+        }
+      ]
+    },
+    {
+      "step": "deploy-CoffeeWarehouseReceipt",
+      "hash": "0xe4ae5e6665609fde635946b6f1eddcb7064bc09e46ed0dd0553f5e9b6684a0b4",
+      "chainId": 43113,
+      "blockNumber": 58847054,
+      "state": {
+        "Token": "Coffee Warehouse Receipt / CWR",
+        "精度": "0",
+        "供应量 CWR": "0",
+        "部署者 CWR": "0",
+        "买方 CWR": "0",
+        "资产证明": "urn:bootcamp:coffee:batch-001:v1"
+      },
+      "events": [
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "RoleGranted",
+          "args": {
+            "role": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "account": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "sender": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7"
+          }
+        },
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "RoleGranted",
+          "args": {
+            "role": "0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6",
+            "account": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "sender": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7"
+          }
+        },
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "RoleGranted",
+          "args": {
+            "role": "0xdd7c9aafbb91d54fb2041db1d5b172ea665309b32f5fffdbddf452802a1e3b20",
+            "account": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "sender": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7"
+          }
+        },
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "AssetDocumentUpdated",
+          "args": {
+            "previousDocument": "",
+            "newDocument": "urn:bootcamp:coffee:batch-001:v1",
+            "editor": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7"
+          }
+        }
+      ]
+    },
+    {
+      "step": "rwa-mint",
+      "hash": "0xc49c30d4ca6cb6b45fb1e8bc5a5555f6a20f35b57fcf11a5edb86a9a24c4d6f4",
+      "chainId": 43113,
+      "blockNumber": 58847056,
+      "state": {
+        "Token": "Coffee Warehouse Receipt / CWR",
+        "精度": "0",
+        "供应量 CWR": "100",
+        "部署者 CWR": "100",
+        "买方 CWR": "0",
+        "资产证明": "urn:bootcamp:coffee:batch-001:v1"
+      },
+      "events": [
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "Transfer",
+          "args": {
+            "from": "0x0000000000000000000000000000000000000000",
+            "to": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "value": "100"
+          }
+        },
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "ReceiptIssued",
+          "args": {
+            "to": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "amount": "100"
+          }
+        }
+      ]
+    },
+    {
+      "step": "rwa-transfer",
+      "hash": "0xdc48ae344e7e2eccd46310287de46b574220ba1019138f0b289b85969e642fec",
+      "chainId": 43113,
+      "blockNumber": 58847059,
+      "state": {
+        "Token": "Coffee Warehouse Receipt / CWR",
+        "精度": "0",
+        "供应量 CWR": "100",
+        "部署者 CWR": "70",
+        "买方 CWR": "30",
+        "资产证明": "urn:bootcamp:coffee:batch-001:v1"
+      },
+      "events": [
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "Transfer",
+          "args": {
+            "from": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "to": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "value": "30"
+          }
+        }
+      ]
+    },
+    {
+      "step": "rwa-burn",
+      "hash": "0x1139005411ce8a24f99cba45f788668aef28351237864739add1138bac81a079",
+      "chainId": 43113,
+      "blockNumber": 58847064,
+      "state": {
+        "Token": "Coffee Warehouse Receipt / CWR",
+        "精度": "0",
+        "供应量 CWR": "90",
+        "部署者 CWR": "70",
+        "买方 CWR": "20",
+        "资产证明": "urn:bootcamp:coffee:batch-001:v1"
+      },
+      "events": [
+        {
+          "contract": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+          "event": "Transfer",
+          "args": {
+            "from": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "to": "0x0000000000000000000000000000000000000000",
+            "value": "10"
+          }
+        }
+      ]
+    },
+    {
+      "step": "deposit-quote",
+      "hash": "0xf8634842a52545d52c0844b7848e7c4a659399f8429fce258d64beb788369111",
+      "chainId": 43113,
+      "blockNumber": 58847092,
+      "state": {
+        "卖方交易所 BASE": "100",
+        "卖方交易所 mUSD": "0.0",
+        "买方交易所 BASE": "0",
+        "买方交易所 mUSD": "1000.0",
+        "买方钱包 BASE": "0"
+      },
+      "events": [
+        {
+          "contract": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+          "event": "Transfer",
+          "args": {
+            "from": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "to": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+            "value": "1000000000"
+          }
+        },
+        {
+          "contract": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+          "event": "Deposit",
+          "args": {
+            "user": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "token": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+            "amount": "1000000000"
+          }
+        }
+      ]
+    },
+    {
+      "step": "settle-trade",
+      "hash": "0xc2a4c104ca186cd4567aae13b37df056dd457058884fd7284fc46335bf5a105f",
+      "chainId": 43113,
+      "blockNumber": 58847096,
+      "state": {
+        "卖方交易所 BASE": "90",
+        "卖方交易所 mUSD": "100.0",
+        "买方交易所 BASE": "10",
+        "买方交易所 mUSD": "900.0",
+        "买方钱包 BASE": "0"
+      },
+      "events": [
+        {
+          "contract": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+          "event": "Trade",
+          "args": {
+            "buyHash": "0x62191c372cd75fe0baa424dcba0d72c50f7fffe50ec7bac052ae1f00cfcddaeb",
+            "sellHash": "0x058132796f6cf58368715edbb602ae1771cbce277afe4e5cd21a45a92eb5b84c",
+            "buyer": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "seller": "0xfd01b72Ae727f919f4bfA657B99A6EFe35c47CF7",
+            "amount": "10",
+            "price": "10000000"
+          }
+        }
+      ]
+    },
+    {
+      "step": "withdraw-base",
+      "hash": "0xb86424acd6d57399d72feae2c517f6069006718db0f11d624fe4d3be4e0d423b",
+      "chainId": 43113,
+      "blockNumber": 58847102,
+      "state": {
+        "卖方交易所 BASE": "90",
+        "卖方交易所 mUSD": "100.0",
+        "买方交易所 BASE": "0",
+        "买方交易所 mUSD": "900.0",
+        "买方钱包 BASE": "10"
+      },
+      "events": [
+        {
+          "contract": "0xb0484142986371435B2f57777616f06010E91fB0",
+          "event": "Transfer",
+          "args": {
+            "from": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+            "to": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "value": "10"
+          }
+        },
+        {
+          "contract": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+          "event": "Withdraw",
+          "args": {
+            "user": "0x703849aF75A802b6E3A0c37c80330fe6ADD17596",
+            "token": "0xb0484142986371435B2f57777616f06010E91fB0",
+            "amount": "10"
+          }
+        }
+      ]
+    }
+  ],
+  "explorer": {
+    "status": "captured",
+    "source": "Avalanche official testnet explorer",
+    "url": "https://explorer-test.avax.network/c-chain/address/0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+    "screenshot": "rwa-explorer.png"
+  }
+}

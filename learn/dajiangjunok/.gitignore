@@ -1,0 +1,10 @@
+node_modules/
+artifacts/
+out/
+cache/
+.env
+.env.*
+!.env.example
+broadcast/
+scaffold-eth-2/
+.DS_Store

@@ -1,0 +1,8 @@
+LOCAL ANVIL 31337 — NOT FUJI
+
+
+Nothing to compile
+No need to generate any newer typings.
+deploying "BootcampToken" (tx: 0xd40e4d72f0a356d1b9ae00a3c89a311635cdebdefb450bca1cab0491b537af9a)...: deployed at 0x5FbDB2315678afecb367f032d93F642f64180aa3 with 1155323 gas
+📝 Updated TypeScript contract definition file on ../nextjs/contracts/deployedContracts.ts
+WARNING: You are currently using Node.js v25.2.1, which is not supported by Hardhat. This can lead to unexpected behavior. See https://hardhat.org/nodejs-versions

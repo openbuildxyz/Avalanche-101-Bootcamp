@@ -1,0 +1,193 @@
+{
+  "network": "LOCAL ANVIL ONLY — NOT FUJI",
+  "chainId": 31337,
+  "generatedAt": "2026-09-29T07:03:58.230Z",
+  "contracts": {
+    "BootcampToken": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "MockUSDC": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "LearningPair": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+    "CoffeeWarehouseReceipt": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+    "BaseAsset": "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
+    "MiniExchange": "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82"
+  },
+  "transactions": [
+    {
+      "label": "deploy BootcampToken",
+      "hash": "0xa01e3d643b0bc461617b604c04d1a53718f03139a9a8c6a02ddae8fd824864a7",
+      "blockNumber": 1,
+      "status": 1
+    },
+    {
+      "label": "deploy MockUSDC",
+      "hash": "0xdb9573eacc84306338f580fad0d818895ccf68922eebc95ce87e1842046c8cca",
+      "blockNumber": 2,
+      "status": 1
+    },
+    {
+      "label": "deploy LearningPair",
+      "hash": "0xd2e96f68539368012f2cdd8535149677d6c02826aace015080fb0a09c5b8737e",
+      "blockNumber": 3,
+      "status": 1
+    },
+    {
+      "label": "configure DEX price source",
+      "hash": "0x4d674b542c48837c6b3ae5ce6f5d92ae86271b5769ee60ee7402890f4284593e",
+      "blockNumber": 4,
+      "status": 1
+    },
+    {
+      "label": "mint mock quote",
+      "hash": "0xa48255b8941602e2e5c4195bd4a38e6f1ef48bca00a74ad131ac1c6e4ce3d9bd",
+      "blockNumber": 5,
+      "status": 1
+    },
+    {
+      "label": "approve liquidity DJJ",
+      "hash": "0x454f913625e51cb6d722fab6082d1dd0ab29c1db1e3573c9476ef0d8c60327ef",
+      "blockNumber": 6,
+      "status": 1
+    },
+    {
+      "label": "approve liquidity mUSD",
+      "hash": "0xc17cb3a1671922327113472638a1813e7f4db93add1b1ebcc62621b7ad32086d",
+      "blockNumber": 7,
+      "status": 1
+    },
+    {
+      "label": "add real pool liquidity",
+      "hash": "0x500abfcd53e50c04938a3820fca2504da9ff31013354bec105e89256ace9e534",
+      "blockNumber": 8,
+      "status": 1
+    },
+    {
+      "label": "fund buyer mUSD",
+      "hash": "0x92bb6f16cd6d8665016e95041185452dcb20a676a3c53f5ab9d041feb3fbe817",
+      "blockNumber": 9,
+      "status": 1
+    },
+    {
+      "label": "approve purchase",
+      "hash": "0x23b88e2e0e8d0e1596196b7b68bda4eea755262cf2e056a59b5de2c336db2961",
+      "blockNumber": 10,
+      "status": 1
+    },
+    {
+      "label": "purchase priced by DEX",
+      "hash": "0x0b072c825ed3d8e0b829b8c087be38b2f5d35c9b4398fc1ea5fda6a5f295aa71",
+      "blockNumber": 11,
+      "status": 1
+    },
+    {
+      "label": "deploy CoffeeWarehouseReceipt",
+      "hash": "0x93073e6be1c5ed8cefa06ef0d395dfca54e597ca41c22d094382681c159434b6",
+      "blockNumber": 12,
+      "status": 1
+    },
+    {
+      "label": "RWA mint 100 kg",
+      "hash": "0xf4184790d2c8e670b376a81dbbb2f85905c0a61a10eea0ca5e17e1fb1ee02090",
+      "blockNumber": 13,
+      "status": 1
+    },
+    {
+      "label": "RWA transfer 30 kg",
+      "hash": "0x861afcc1e6d4c506c8057af15d1d5665e670c120c6f19d129c48dddac478003c",
+      "blockNumber": 14,
+      "status": 1
+    },
+    {
+      "label": "RWA burn 10 kg",
+      "hash": "0xe3f78854fa174ba5f0c44a9eeb413341428c08986bd0ec19342d133956e96d7f",
+      "blockNumber": 15,
+      "status": 1
+    },
+    {
+      "label": "deploy BaseAsset",
+      "hash": "0x38d5560fb092fa0622201c9073d094315de56d0668ff8b17f539da021f21f727",
+      "blockNumber": 16,
+      "status": 1
+    },
+    {
+      "label": "deploy MiniExchange",
+      "hash": "0x444e0f57ad61ee1121b121652e6a4577d9156bb7c3e41567984db0646e95cd73",
+      "blockNumber": 17,
+      "status": 1
+    },
+    {
+      "label": "mint BASE for seller",
+      "hash": "0x655f029b53b58a04640353dbccbcb6a2c41f539b8f5781cfee8a1e59dbfb2b96",
+      "blockNumber": 18,
+      "status": 1
+    },
+    {
+      "label": "approve BASE deposit",
+      "hash": "0x2440fbbde6cd43b186fc404539754b9e53db9e789d0998de75bf7bde5ffc73a3",
+      "blockNumber": 19,
+      "status": 1
+    },
+    {
+      "label": "deposit BASE",
+      "hash": "0xf06ad1414b946f0b1658bc6daebdf6312f507114b6fecdb9816b5a6d9b98a091",
+      "blockNumber": 20,
+      "status": 1
+    },
+    {
+      "label": "approve mUSD deposit",
+      "hash": "0x65abcec2aab6945b6e56d9df287f999560a039847628050e728d7da9e10aa92f",
+      "blockNumber": 21,
+      "status": 1
+    },
+    {
+      "label": "deposit mUSD",
+      "hash": "0xbd97cb089ae380f526415f10567b8a01b712950c9378dafe90736cccaf440b46",
+      "blockNumber": 22,
+      "status": 1
+    },
+    {
+      "label": "two-address signed settlement",
+      "hash": "0x0b8a457646409f9ab328b197466101c4e59a9b2c4d48ad76cc6240017771d7f0",
+      "blockNumber": 23,
+      "status": 1
+    },
+    {
+      "label": "withdraw BASE",
+      "hash": "0x72148f02647a2e56ef3e41f01faaff5f574a0d461be2e1fe460e54289db81c4e",
+      "blockNumber": 24,
+      "status": 1
+    },
+    {
+      "label": "withdraw mUSD",
+      "hash": "0xa829d50e3642524d8a7786a359f61a22c23f29879cd5c3731c8a1342b84a3708",
+      "blockNumber": 25,
+      "status": 1
+    }
+  ],
+  "checks": {
+    "twoWalletLoginSignatures": true,
+    "dex": {
+      "quoteBefore": "987158034397061298850",
+      "quoteAfter": "967830460108690744679",
+      "purchased": "987158034397061298850",
+      "decimals": {
+        "DJJ": 18,
+        "mUSD": 6
+      }
+    },
+    "rwa": {
+      "totalSupply": "90",
+      "sellerBalance": "70",
+      "buyerBalance": "20"
+    },
+    "miniDex": {
+      "twoAddressTrade": true,
+      "buyerReceivedBASE": "10",
+      "sellerReceivedMUSD": "100",
+      "enginePrice": "10",
+      "depositAndWithdraw": true
+    }
+  },
+  "accounts": {
+    "seller": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "buyer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+  }
+}

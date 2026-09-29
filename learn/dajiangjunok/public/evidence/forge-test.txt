@@ -1,0 +1,57 @@
+$ forge test -vv
+No files changed, compilation skipped
+
+Ran 14 tests for test/MiniExchange.t.sol:MiniExchangeTest
+[PASS] testCancelledOrderRejected() (gas: 57174)
+[PASS] testCrossContractReplayRejected() (gas: 1606840)
+[PASS] testDepositAndWithdraw() (gas: 65695)
+[PASS] testExpiredOrderRejected() (gas: 32267)
+[PASS] testFilledOrderCannotReplay() (gas: 159547)
+[PASS] testForgedSignatureRejected() (gas: 39897)
+[PASS] testHardCapEnforced() (gas: 81621)
+[PASS] testNoWithdrawOfOtherUsersFunds() (gas: 20755)
+[PASS] testOutsideLimitPriceRejected() (gas: 31406)
+[PASS] testSelfTradeRejectedOnChain() (gas: 29459)
+[PASS] testTwoSignedAccountsTradeAndWithdraw() (gas: 189570)
+[PASS] testUnsupportedAssetRejected() (gas: 13732)
+[PASS] testWithdrawBeforeSettlementRejectsTrade() (gas: 94175)
+[PASS] testZeroDepositRejected() (gas: 15852)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 14.52ms (11.94ms CPU time)
+
+Ran 16 tests for test/RWA.t.sol:RWATest
+[PASS] testAuthorizedDocumentUpdate() (gas: 22371)
+[PASS] testAuthorizedMint() (gas: 60394)
+[PASS] testBurnFromRequiresAllowance() (gas: 67219)
+[PASS] testBurnFromWithAllowance() (gas: 75988)
+[PASS] testCapRejected() (gas: 62865)
+[PASS] testDeploymentAndMetadata() (gas: 24550)
+[PASS] testEmptyDocumentRejected() (gas: 11144)
+[PASS] testExcessBurnRejected() (gas: 62857)
+[PASS] testFuzzSupplyAccounting(uint16,uint16) (runs: 256, μ: 65679, ~: 67626)
+[PASS] testInsufficientTransferRejected() (gas: 15639)
+[PASS] testMintToZeroRejected() (gas: 13261)
+[PASS] testRoleRevocation() (gas: 78786)
+[PASS] testTransferBurnAndSupply() (gas: 96397)
+[PASS] testUnauthorizedDocumentUpdateRejected() (gas: 13600)
+[PASS] testUnauthorizedMintRejected() (gas: 13498)
+[PASS] testZeroMintRejected() (gas: 13089)
+Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 21.17ms (19.34ms CPU time)
+
+Ran 13 tests for test/TokenAndDex.t.sol:TokenAndDexTest
+[PASS] testDecimalsAndQuoteFromRealReserves() (gas: 16529)
+[PASS] testEmptyPoolRejected() (gas: 1414260)
+[PASS] testExpiredPurchaseRejected() (gas: 91967)
+[PASS] testFuzzPurchasePreservesConstantProduct(uint64) (runs: 256, μ: 118649, ~: 118653)
+[PASS] testOnlyOwnerConfiguresPair() (gas: 1056609)
+[PASS] testPairCannotBeReplaced() (gas: 14903)
+[PASS] testPurchaseUsesQuoteAndChangesPrice() (gas: 130054)
+[PASS] testRemoveLiquidity() (gas: 66660)
+[PASS] testReverseTokenOrdering() (gas: 1641794)
+[PASS] testSlippageRevertsAtomically() (gas: 109633)
+[PASS] testTokenMetadataAndSupply() (gas: 17095)
+[PASS] testTransferAndAllowance() (gas: 52772)
+[PASS] testWrongPairRejected() (gas: 1060362)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 35.77ms (26.19ms CPU time)
+
+Ran 3 test suites in 41.46ms (71.46ms CPU time): 43 tests passed, 0 failed, 0 skipped (43 total tests)
+2026-09-29T08:11:09.195455Z  WARN evm::traces: failed to flush signature cache cached_path="/Users/wangyongjie/.foundry/cache/signatures" err=CreateFile { source: Os { code: 1, kind: PermissionDenied, message: "Operation not permitted" }, path: "/Users/wangyongjie/.foundry/cache/signatures" }

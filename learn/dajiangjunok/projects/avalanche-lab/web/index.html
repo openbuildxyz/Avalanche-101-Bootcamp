@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dajiangjun · Avalanche Lab</title><link rel="stylesheet" href="/web/style.css"></head>
+<body>
+<header><span class="brand">▲ AVALANCHE LAB</span><span>dajiangjunok / Bootcamp</span></header>
+<main>
+  <p class="eyebrow">BUILD · VERIFY · LEARN</p><h1>从代币到链上交易</h1>
+  <p class="lead">ERC-20、DEX 定价、咖啡仓单与双签名订单结算。连接测试钱包，逐步验证每一笔交易。</p>
+  <section class="wallet"><div><strong id="network">未连接钱包</strong><p id="account">仅支持 Avalanche Fuji（43113）与本地 Anvil（31337）</p></div><div class="actions"><button id="connect">连接并签名登录</button><button id="switch">切换 Fuji</button><button id="refresh">刷新余额</button></div></section>
+  <p id="status" role="status">请连接浏览器钱包。链上操作将在钱包中逐笔确认。</p>
+  <nav><a href="#t2">02 / ERC-20</a><a href="#t3">03 / DEX 定价</a><a href="#t5">05 / RWA</a><a href="#t7">07 / Mini-DEX</a></nav>
+  <div class="grid">
+  <section id="t2" class="card"><span class="tag">TASK 02</span><h2>发行学习代币</h2><p>DJJ · 18 位精度 · 初始供应 1,000,000</p><button id="deployToken">部署 BootcampToken</button><dl id="tokenInfo"></dl><p class="hint">Scaffold-ETH 项目初始化及 Debug Contracts 用法见 task2.md。</p></section>
+  <section id="t3" class="card"><span class="tag">TASK 03</span><h2>让流动性决定价格</h2><p>Learning DEX · DJJ / mUSD · 0.3% 手续费</p><button id="setupPair">创建交易对并添加初始流动性</button><p class="hint">依次部署 mUSD 和 Pair，授权并注入 100,000 DJJ + 10,000 mUSD。mUSD 是学习代币。</p><label>支付 mUSD<input id="quoteAmount" value="100" inputmode="decimal"></label><div class="actions"><button id="getQuote">读取池子报价</button><button id="buy">按报价购买（1% 滑点）</button></div><dl id="pairInfo"></dl></section>
+  <section id="t5" class="card"><span class="tag">TASK 05</span><h2>咖啡仓单 · CWR</h2><p>1 CWR = 模拟的 1 kg 咖啡仓单权益 · 上限 10,000</p><button id="deployRwa">部署 RWA 合约</button><label>接收地址<input id="recipient" placeholder="0x…"></label><label>数量（整数）<input id="rwaAmount" value="100" inputmode="numeric"></label><div class="actions"><button id="mintRwa">发行</button><button id="transferRwa">转账</button><button id="burnRwa">销毁本人持仓</button></div><label>模拟资产证明 URI<input id="document" value="urn:bootcamp:coffee:batch-001:v2"></label><button id="updateDoc">更新资产证明</button><dl id="rwaInfo"></dl></section>
+  <section id="t7" class="card"><span class="tag">TASK 07</span><h2>Mini-DEX 资金账户</h2><p>BASE / mUSD · 现货教学示例 · 双方 EIP-712 签名结算</p><button id="deployDex">部署三个合约</button><p class="hint">BaseAsset、MockUSDC、MiniExchange。部署账户是两种测试代币的发行者。</p><label>资产<select id="asset"><option value="base">BASE（整数）</option><option value="quote">mUSD（6 位小数）</option></select></label><label>数量<input id="dexAmount" value="100" inputmode="decimal"></label><label>测试代币领取地址<input id="assetRecipient" placeholder="0x…，留空使用当前钱包"></label><div class="actions"><button id="mintAsset">发行测试币</button><button id="deposit">授权并存入</button><button id="withdraw">提取</button></div><dl id="dexInfo"></dl></section>
+  </div>
+  <section class="card"><span class="tag">SIGNED ORDERS</span><h2>两个钱包，一次真实结算</h2><p>先由卖方签名并导出 JSON，再由买方导入卖单、签署买单并结算。导入的第一笔订单视为先到达的挂单，成交使用其价格。</p><div class="fields"><label>方向<select id="side"><option value="sell">卖出 BASE</option><option value="buy">买入 BASE</option></select></label><label>限价（mUSD / BASE）<input id="price" value="10"></label><label>数量（BASE 整数）<input id="orderAmount" value="10"></label></div><div class="actions"><button id="signOrder">签名订单（有效 1 小时）</button><button id="importOrder">导入 JSON 订单</button><button id="settle">撮合并发送链上结算</button><button id="cancelOrder">撤销最近本人订单</button></div><textarea id="orderJson" rows="7" placeholder="签名后的订单 JSON；也可粘贴另一钱包提供的订单。"></textarea><pre id="book">尚无订单</pre><p class="hint">订单簿仅在本页内存中保存；刷新后可重新导入。签名订单并不锁定余额，成交是否成功以链上回执为准。</p></section>
+  <section class="card"><h2>地址与交易凭证</h2><div class="actions"><button id="export">导出地址和交易回执</button><label class="file">导入部署记录<input type="file" id="importConfig" accept="application/json"></label></div><p class="hint">导出记录区分 Fuji 和本地网络；请保存实际浏览器截图作为提交材料。</p><pre id="log">暂无交易</pre></section>
+</main><footer>学习模拟项目 · 本地测试不能替代 Fuji 部署凭证 · 不承载真实资产</footer>
+<script type="module" src="/web/app.mjs"></script></body></html>

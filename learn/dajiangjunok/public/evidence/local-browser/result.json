@@ -1,0 +1,187 @@
+{
+  "network": "LOCAL ANVIL ONLY — NOT FUJI",
+  "chainId": 31337,
+  "generatedAt": "2026-09-29T07:17:30.022Z",
+  "checks": [
+    "wallet signature login",
+    "ERC20 deployment",
+    "pool liquidity and live quote",
+    "DEX purchase",
+    "RWA mint/transfer/burn/document",
+    "two wallets deposit",
+    "signed orders matched and settled",
+    "withdraw",
+    "private files not served"
+  ],
+  "pageErrors": [],
+  "receiptLog": {
+    "chainId": 31337,
+    "config": {
+      "token": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "quote": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "pair": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "rwa": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+      "base": "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
+      "dexQuote": "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
+      "dex": "0x9A9f2CCfdE556A7E9Ff0848998Aa4a0CFD8863AE"
+    },
+    "transactions": [
+      {
+        "label": "deploy BootcampToken",
+        "hash": "0xa01e3d643b0bc461617b604c04d1a53718f03139a9a8c6a02ddae8fd824864a7",
+        "blockNumber": 1,
+        "status": 1
+      },
+      {
+        "label": "deploy MockUSDC",
+        "hash": "0xdb9573eacc84306338f580fad0d818895ccf68922eebc95ce87e1842046c8cca",
+        "blockNumber": 2,
+        "status": 1
+      },
+      {
+        "label": "deploy LearningPair",
+        "hash": "0xd2e96f68539368012f2cdd8535149677d6c02826aace015080fb0a09c5b8737e",
+        "blockNumber": 3,
+        "status": 1
+      },
+      {
+        "label": "配置 DEX 价格源",
+        "hash": "0x4d674b542c48837c6b3ae5ce6f5d92ae86271b5769ee60ee7402890f4284593e",
+        "blockNumber": 4,
+        "status": 1
+      },
+      {
+        "label": "发行学习 mUSD",
+        "hash": "0x32958c6484695f91f03a8e77a94977cc46803e75dfffc97c07904512d4a27031",
+        "blockNumber": 5,
+        "status": 1
+      },
+      {
+        "label": "授权 DJJ 流动性",
+        "hash": "0x454f913625e51cb6d722fab6082d1dd0ab29c1db1e3573c9476ef0d8c60327ef",
+        "blockNumber": 6,
+        "status": 1
+      },
+      {
+        "label": "授权 mUSD 流动性",
+        "hash": "0xc17cb3a1671922327113472638a1813e7f4db93add1b1ebcc62621b7ad32086d",
+        "blockNumber": 7,
+        "status": 1
+      },
+      {
+        "label": "添加交易对流动性",
+        "hash": "0x95f789dd1f62e07350b5249672d46c1b329286b9edf574240be547ab02470fcd",
+        "blockNumber": 8,
+        "status": 1
+      },
+      {
+        "label": "授权购买",
+        "hash": "0x0c97b22e3b29292c46701bcd5502757dbda327b35644ffeb34473c56093e8b52",
+        "blockNumber": 9,
+        "status": 1
+      },
+      {
+        "label": "使用 DEX 报价购买 DJJ",
+        "hash": "0xd876d0af594d1224125fb4feef2d965adbdb1bfb226c4a9d422cf86af17c31dd",
+        "blockNumber": 10,
+        "status": 1
+      },
+      {
+        "label": "deploy CoffeeWarehouseReceipt",
+        "hash": "0x63d6adc06925882187eeec4b405a326721ccf2c6fa10b77754befa048d92f88e",
+        "blockNumber": 11,
+        "status": 1
+      },
+      {
+        "label": "RWA mint",
+        "hash": "0xd644c7a2a367f627d20c64b5d3d449cde4a714f14defba3b229a5fca5ef7f64e",
+        "blockNumber": 12,
+        "status": 1
+      },
+      {
+        "label": "RWA transfer",
+        "hash": "0x20862ff1a2951f762d38f87bf87482e8f970059e5739b63f2f52317550aa7772",
+        "blockNumber": 13,
+        "status": 1
+      },
+      {
+        "label": "RWA burn",
+        "hash": "0x461bd2147df04cf147468d3fb20b75f29e13632c39a75c88ac34149bffb79dff",
+        "blockNumber": 14,
+        "status": 1
+      },
+      {
+        "label": "更新资产证明",
+        "hash": "0xb448774db803b5b9c1343d6a2e75f0803fa555d40cadab47ca0d629a162926d6",
+        "blockNumber": 15,
+        "status": 1
+      },
+      {
+        "label": "deploy BaseAsset",
+        "hash": "0x8d316ee13e25010db8b3f3bc1d3d336f449cba7e0cd5826d7bca7f6acd97eec1",
+        "blockNumber": 16,
+        "status": 1
+      },
+      {
+        "label": "deploy MockUSDC",
+        "hash": "0xb0b246b89dbb309153cc77b7db5c2a18d6dafe344ce4de4c70ff9efc46e57bdb",
+        "blockNumber": 17,
+        "status": 1
+      },
+      {
+        "label": "deploy MiniExchange",
+        "hash": "0x9bc4ae77d51235852926af904b9be0a458be12bcc55ae592a9dc2e2515b7fa46",
+        "blockNumber": 18,
+        "status": 1
+      },
+      {
+        "label": "发行测试币",
+        "hash": "0xc360360ee5d32e8cb44045c7cd8466553902d9c8025bc33023f8588f1e1a1442",
+        "blockNumber": 19,
+        "status": 1
+      },
+      {
+        "label": "授权存款",
+        "hash": "0xa90f32677d9c36775fc00a5fa39526b0b3a8b45aaf047495660cf227cfd7764b",
+        "blockNumber": 20,
+        "status": 1
+      },
+      {
+        "label": "deposit",
+        "hash": "0xbf7cc0c9efb3d902a71fb243add14c73bb966d6327d42dcb73262fc9223d3c34",
+        "blockNumber": 21,
+        "status": 1
+      },
+      {
+        "label": "发行测试币",
+        "hash": "0xc23e7d70f08663e864eef9fce03fa970f1d9ed3ed9d5f36b554b0a7fb64de04e",
+        "blockNumber": 22,
+        "status": 1
+      },
+      {
+        "label": "授权存款",
+        "hash": "0xb1ccba8e402878f7ccf7fd7d2f0e09194a4784160691b522de82d53a0e4e2554",
+        "blockNumber": 23,
+        "status": 1
+      },
+      {
+        "label": "deposit",
+        "hash": "0xfcb2eccb0c33148bfc16c781bdcba2013855c594659338500a44431266607b07",
+        "blockNumber": 24,
+        "status": 1
+      },
+      {
+        "label": "双地址签名成交",
+        "hash": "0x4763893fc56c778488d78e84747f7a8d8912585280783df5755e47e702a79692",
+        "blockNumber": 25,
+        "status": 1
+      },
+      {
+        "label": "withdraw",
+        "hash": "0xb23624da810f03d21ea0aad8267ac34c9ec49b53fd83341a1f93c577f2d7421e",
+        "blockNumber": 26,
+        "status": 1
+      }
+    ]
+  }
+}

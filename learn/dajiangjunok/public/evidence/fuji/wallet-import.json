@@ -1,0 +1,275 @@
+{
+  "chainId": 43113,
+  "network": "Fuji",
+  "config": {
+    "token": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+    "quote": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+    "pair": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+    "rwa": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+    "base": "0xb0484142986371435B2f57777616f06010E91fB0",
+    "dex": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+    "dexQuote": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD"
+  },
+  "transactions": [
+    {
+      "label": "fund-test-buyer",
+      "hash": "0x7cd7dac728ba87135eb9c7051a4a695ff8e2c7332a8c340b05dad63b187b5edb",
+      "blockNumber": 58846975,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "21000",
+      "feeWei": "21006720000",
+      "explorer": "https://testnet.snowtrace.io/tx/0x7cd7dac728ba87135eb9c7051a4a695ff8e2c7332a8c340b05dad63b187b5edb"
+    },
+    {
+      "label": "deploy-BootcampToken",
+      "hash": "0xe39fac27477cffd60730b299c15b2c53cad80cb622d735c4b62a9871a5fba0a8",
+      "blockNumber": 58846981,
+      "status": 1,
+      "contractAddress": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+      "gasUsed": "1155323",
+      "feeWei": "1155692703360",
+      "explorer": "https://testnet.snowtrace.io/tx/0xe39fac27477cffd60730b299c15b2c53cad80cb622d735c4b62a9871a5fba0a8"
+    },
+    {
+      "label": "deploy-MockUSDC",
+      "hash": "0x21a7ac5d7e7179eb6aee5cc3555328f8b0919c9f9151a6b7ee4588f2573592a3",
+      "blockNumber": 58846987,
+      "status": 1,
+      "contractAddress": "0x0226ff5EAad8bF2A31b570c64ba36f5048B83dCD",
+      "gasUsed": "618454",
+      "feeWei": "618651905280",
+      "explorer": "https://testnet.snowtrace.io/tx/0x21a7ac5d7e7179eb6aee5cc3555328f8b0919c9f9151a6b7ee4588f2573592a3"
+    },
+    {
+      "label": "deploy-LearningPair",
+      "hash": "0x399f06bae75478d69e12fba8fa869fca76a6c07c951a1b48194e096dee60c586",
+      "blockNumber": 58846992,
+      "status": 1,
+      "contractAddress": "0xc8aA820a262460f530Dce0B53F838C69a96B3e1e",
+      "gasUsed": "1534597",
+      "feeWei": "1535088071040",
+      "explorer": "https://testnet.snowtrace.io/tx/0x399f06bae75478d69e12fba8fa869fca76a6c07c951a1b48194e096dee60c586"
+    },
+    {
+      "label": "configure-dex-pair",
+      "hash": "0x0a89f11993abe9925667fd24a944c0604844e3dd59a32bbcd2d5e5d9000fa59f",
+      "blockNumber": 58846997,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "73944",
+      "feeWei": "73967662080",
+      "explorer": "https://testnet.snowtrace.io/tx/0x0a89f11993abe9925667fd24a944c0604844e3dd59a32bbcd2d5e5d9000fa59f"
+    },
+    {
+      "label": "mint-liquidity-quote",
+      "hash": "0x41a9d806051965ca77b551eacbedfa182ebcc46c1268b5dba5b67b59a4751d93",
+      "blockNumber": 58847005,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "70672",
+      "feeWei": "70694615040",
+      "explorer": "https://testnet.snowtrace.io/tx/0x41a9d806051965ca77b551eacbedfa182ebcc46c1268b5dba5b67b59a4751d93"
+    },
+    {
+      "label": "approve-liquidity-token",
+      "hash": "0x5da634b634b98083ca538233829826791728283668e64cfe1950add92f646f3e",
+      "blockNumber": 58847013,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "46412",
+      "feeWei": "46426851840",
+      "explorer": "https://testnet.snowtrace.io/tx/0x5da634b634b98083ca538233829826791728283668e64cfe1950add92f646f3e"
+    },
+    {
+      "label": "approve-liquidity-quote",
+      "hash": "0xab4d3379b8d2192cada9af3a6a75e4c4b4e51382e3e7d85133c433265cbbd75b",
+      "blockNumber": 58847019,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "46347",
+      "feeWei": "46361831040",
+      "explorer": "https://testnet.snowtrace.io/tx/0xab4d3379b8d2192cada9af3a6a75e4c4b4e51382e3e7d85133c433265cbbd75b"
+    },
+    {
+      "label": "add-liquidity",
+      "hash": "0x6e70f5974891c9d5526839d803b7af939dc0567044b721f091ff8a67d793b8a5",
+      "blockNumber": 58847028,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "206572",
+      "feeWei": "206638103040",
+      "explorer": "https://testnet.snowtrace.io/tx/0x6e70f5974891c9d5526839d803b7af939dc0567044b721f091ff8a67d793b8a5"
+    },
+    {
+      "label": "mint-buyer-quote",
+      "hash": "0xe1184d32ba126edb350e6edcc8b235b053b9fd0c99fed0792cf940103641c95e",
+      "blockNumber": 58847035,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "53560",
+      "feeWei": "53577139200",
+      "explorer": "https://testnet.snowtrace.io/tx/0xe1184d32ba126edb350e6edcc8b235b053b9fd0c99fed0792cf940103641c95e"
+    },
+    {
+      "label": "approve-dex-purchase",
+      "hash": "0x3f8957297fec0f2c134085f3e97a0b6db2f018c7dc77861a8dbe816e4bdb80a6",
+      "blockNumber": 58847042,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "46335",
+      "feeWei": "46349827200",
+      "explorer": "https://testnet.snowtrace.io/tx/0x3f8957297fec0f2c134085f3e97a0b6db2f018c7dc77861a8dbe816e4bdb80a6"
+    },
+    {
+      "label": "dex-purchase",
+      "hash": "0xbf44cf05be1c8664701078ff09a356ff38efdba2f845df812174832d44a5ac9c",
+      "blockNumber": 58847049,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "161921",
+      "feeWei": "161972814720",
+      "explorer": "https://testnet.snowtrace.io/tx/0xbf44cf05be1c8664701078ff09a356ff38efdba2f845df812174832d44a5ac9c"
+    },
+    {
+      "label": "deploy-CoffeeWarehouseReceipt",
+      "hash": "0xe4ae5e6665609fde635946b6f1eddcb7064bc09e46ed0dd0553f5e9b6684a0b4",
+      "blockNumber": 58847054,
+      "status": 1,
+      "contractAddress": "0x4b9cdac91e3F060c6943D06a8FD7e4823d13346E",
+      "gasUsed": "1222528",
+      "feeWei": "1222919208960",
+      "explorer": "https://testnet.snowtrace.io/tx/0xe4ae5e6665609fde635946b6f1eddcb7064bc09e46ed0dd0553f5e9b6684a0b4"
+    },
+    {
+      "label": "rwa-mint",
+      "hash": "0xc49c30d4ca6cb6b45fb1e8bc5a5555f6a20f35b57fcf11a5edb86a9a24c4d6f4",
+      "blockNumber": 58847056,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "72463",
+      "feeWei": "72486188160",
+      "explorer": "https://testnet.snowtrace.io/tx/0xc49c30d4ca6cb6b45fb1e8bc5a5555f6a20f35b57fcf11a5edb86a9a24c4d6f4"
+    },
+    {
+      "label": "rwa-transfer",
+      "hash": "0xdc48ae344e7e2eccd46310287de46b574220ba1019138f0b289b85969e642fec",
+      "blockNumber": 58847059,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "51545",
+      "feeWei": "51561494400",
+      "explorer": "https://testnet.snowtrace.io/tx/0xdc48ae344e7e2eccd46310287de46b574220ba1019138f0b289b85969e642fec"
+    },
+    {
+      "label": "rwa-burn",
+      "hash": "0x1139005411ce8a24f99cba45f788668aef28351237864739add1138bac81a079",
+      "blockNumber": 58847064,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "33822",
+      "feeWei": "33832823040",
+      "explorer": "https://testnet.snowtrace.io/tx/0x1139005411ce8a24f99cba45f788668aef28351237864739add1138bac81a079"
+    },
+    {
+      "label": "deploy-BaseAsset",
+      "hash": "0xf48e51d8fcaa0655969270631cfda7cfe6cc1edfd0c4564622145f6f06bfff70",
+      "blockNumber": 58847066,
+      "status": 1,
+      "contractAddress": "0xb0484142986371435B2f57777616f06010E91fB0",
+      "gasUsed": "618378",
+      "feeWei": "618575880960",
+      "explorer": "https://testnet.snowtrace.io/tx/0xf48e51d8fcaa0655969270631cfda7cfe6cc1edfd0c4564622145f6f06bfff70"
+    },
+    {
+      "label": "deploy-MiniExchange",
+      "hash": "0x3585da975fae776160019c792d586b7cf359b8d2cde7ca7e2c1d86f21bf0b1d5",
+      "blockNumber": 58847071,
+      "status": 1,
+      "contractAddress": "0x8D1D56F902fb018354acD8CDE735eEFB540C4B9C",
+      "gasUsed": "1717652",
+      "feeWei": "1718201648640",
+      "explorer": "https://testnet.snowtrace.io/tx/0x3585da975fae776160019c792d586b7cf359b8d2cde7ca7e2c1d86f21bf0b1d5"
+    },
+    {
+      "label": "mint-dex-base",
+      "hash": "0xef211d2acb29f4cd6d0f82c88f09e20207fcf2eab806a104b518374db1fb9f49",
+      "blockNumber": 58847076,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "70636",
+      "feeWei": "70658603520",
+      "explorer": "https://testnet.snowtrace.io/tx/0xef211d2acb29f4cd6d0f82c88f09e20207fcf2eab806a104b518374db1fb9f49"
+    },
+    {
+      "label": "approve-base-deposit",
+      "hash": "0xda09afa3f5e898985467b525fcc409fd42e40ae07f98c7cbfd094e52c61ea30a",
+      "blockNumber": 58847080,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "46311",
+      "feeWei": "46325819520",
+      "explorer": "https://testnet.snowtrace.io/tx/0xda09afa3f5e898985467b525fcc409fd42e40ae07f98c7cbfd094e52c61ea30a"
+    },
+    {
+      "label": "deposit-base",
+      "hash": "0xb7de1141bb21bde7d72b5a42e9a63e450897c732d03844951eece6526c5ceb05",
+      "blockNumber": 58847084,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "115715",
+      "feeWei": "115752028800",
+      "explorer": "https://testnet.snowtrace.io/tx/0xb7de1141bb21bde7d72b5a42e9a63e450897c732d03844951eece6526c5ceb05"
+    },
+    {
+      "label": "approve-quote-deposit",
+      "hash": "0x1afe0f67497d7082321547d647bc072bc2126ec8687ab0bc7e1b52466111045b",
+      "blockNumber": 58847088,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "46335",
+      "feeWei": "46349827200",
+      "explorer": "https://testnet.snowtrace.io/tx/0x1afe0f67497d7082321547d647bc072bc2126ec8687ab0bc7e1b52466111045b"
+    },
+    {
+      "label": "deposit-quote",
+      "hash": "0xf8634842a52545d52c0844b7848e7c4a659399f8429fce258d64beb788369111",
+      "blockNumber": 58847092,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "115796",
+      "feeWei": "115833054720",
+      "explorer": "https://testnet.snowtrace.io/tx/0xf8634842a52545d52c0844b7848e7c4a659399f8429fce258d64beb788369111"
+    },
+    {
+      "label": "settle-trade",
+      "hash": "0xc2a4c104ca186cd4567aae13b37df056dd457058884fd7284fc46335bf5a105f",
+      "blockNumber": 58847096,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "155333",
+      "feeWei": "155382706560",
+      "explorer": "https://testnet.snowtrace.io/tx/0xc2a4c104ca186cd4567aae13b37df056dd457058884fd7284fc46335bf5a105f"
+    },
+    {
+      "label": "withdraw-base",
+      "hash": "0xb86424acd6d57399d72feae2c517f6069006718db0f11d624fe4d3be4e0d423b",
+      "blockNumber": 58847102,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "73744",
+      "feeWei": "73767598080",
+      "explorer": "https://testnet.snowtrace.io/tx/0xb86424acd6d57399d72feae2c517f6069006718db0f11d624fe4d3be4e0d423b"
+    },
+    {
+      "label": "withdraw-quote",
+      "hash": "0x97828c5e645978fb7bd5d4b4e9547754c9f2b9748cae27afd50f1ccb4fb2a8f2",
+      "blockNumber": 58847105,
+      "status": 1,
+      "contractAddress": null,
+      "gasUsed": "56715",
+      "feeWei": "56733148800",
+      "explorer": "https://testnet.snowtrace.io/tx/0x97828c5e645978fb7bd5d4b4e9547754c9f2b9748cae27afd50f1ccb4fb2a8f2"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+$ npm test
+
+> dajiangjunok-avalanche-homework@1.0.0 test
+> node --test task7/test/*.test.mjs
+
+✔ price priority and maker execution price (1.237417ms)
+✔ time priority: equal price executes arrival order, independent of ID (0.168833ms)
+✔ highest bid first when incoming order is a sell (0.144291ms)
+✔ self-trade rejected even with mixed-case addresses (0.28625ms)
+✔ late self-trade rejection rolls back earlier potential fills (0.126041ms)
+✔ partial fill preserves maker time priority (0.078666ms)
+✔ noncrossing orders stay open (0.06625ms)
+✔ IOC fills available quantity then cancels remainder (0.064542ms)
+✔ FOK fails atomically without sufficient liquidity (0.219959ms)
+✔ FOK fills across multiple makers (0.130958ms)
+✔ cancel enforces ownership (0.1035ms)
+✔ duplicate IDs, floating point amounts, zero price and invalid addresses are rejected (0.088167ms)
+✔ BigInt preserves values above Number.MAX_SAFE_INTEGER (0.0935ms)
+✔ expired orders do not match (0.193ms)
+✔ returned order snapshots cannot mutate internal book (0.057917ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64.220583

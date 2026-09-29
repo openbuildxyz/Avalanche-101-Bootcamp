@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+process.chdir(path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'));
+const report=JSON.parse(fs.readFileSync('../../public/evidence/fuji/deployment.json'));
+if(report.chainId!==43113||report.status!=='complete')throw Error('Fuji deployment is not complete');
+const artifact=JSON.parse(fs.readFileSync('artifacts/BootcampToken.json'));
+const file='scaffold-eth-2/packages/nextjs/contracts/deployedContracts.ts';
+const data={43113:{BootcampToken:{address:report.config.token,abi:artifact.abi,inheritedFunctions:{}}}};
+fs.writeFileSync(file,`// Generated from confirmed Fuji deployment by scripts/sync-scaffold-fuji.mjs\nimport { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";\nconst deployedContracts = ${JSON.stringify(data,null,2)} as const satisfies GenericContractsDeclaration;\nexport default deployedContracts;\n`);
+console.log('Scaffold-ETH now reads confirmed Fuji BootcampToken:',report.config.token);

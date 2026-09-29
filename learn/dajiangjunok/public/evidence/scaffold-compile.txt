@@ -1,0 +1,7 @@
+WARNING: You are currently using Node.js v25.2.1, which is not supported by Hardhat. This can lead to unexpected behavior. See https://hardhat.org/nodejs-versions
+
+
+Downloading compiler 0.8.24
+Generating typings for: 20 artifacts in dir: typechain-types for target: ethers-v6
+Successfully generated 68 typings!
+Compiled 16 Solidity files successfully (evm target: paris).

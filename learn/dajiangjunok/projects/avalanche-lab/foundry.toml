@@ -1,0 +1,13 @@
+[profile.default]
+src = "contracts"
+test = "test"
+out = "out"
+libs = ["node_modules"]
+remappings = ["@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/"]
+solc = "./scripts/solc-wrapper.py"
+evm_version = "paris"
+optimizer = true
+optimizer_runs = 200
+
+[fuzz]
+runs = 256

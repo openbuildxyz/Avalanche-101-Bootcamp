@@ -1,0 +1,12 @@
+{
+  "chainId": 31337,
+  "network": "LOCAL ANVIL ONLY — NOT FUJI",
+  "revision": "208fbd6103f905ec2c9d4451d735c0883a0f2d9f",
+  "checks": [
+    "Scaffold-ETH Hardhat deployment",
+    "generated TypeScript ABI",
+    "Next.js home rendered",
+    "Debug Contracts shows BootcampToken"
+  ],
+  "generatedAt": "2026-09-29T07:28:55.883Z"
+}

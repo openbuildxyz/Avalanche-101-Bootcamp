@@ -1,0 +1,9 @@
+{
+  "chainId": 43113,
+  "address": "0x289b480fC86c620B3843c3f624aB0C53558e120A",
+  "checks": [
+    "Scaffold-ETH Debug Contracts connected to Avalanche Fuji",
+    "Live contract symbol DJJ displayed"
+  ],
+  "screenshot": "scaffold-eth-fuji.png"
+}
